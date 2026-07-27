@@ -28,18 +28,14 @@
 
         h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
         /* Navigation */
         nav {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+            top: 0; left: 0; width: 100%;
             padding: 2.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            display: flex; justify-content: space-between; align-items: center;
             z-index: 10;
         }
 
@@ -48,68 +44,71 @@
         nav a:hover { color: var(--accent-color); }
         .social-icons { display: flex; gap: 1.2rem; margin-left: 1rem; font-size: 1.1rem; }
 
-        /* Hero Section with Cover Art.jpg */
+        /* Hero Section */
         header {
             position: relative;
             height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            /* Note: We use %20 to handle the space in your filename */
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(13,13,13,1)), 
-                        url('Cover%20Art.jpg');
-            background-size: cover; 
-            background-position: center;
-            background-repeat: no-repeat;
-            margin-bottom: 4rem;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(13,13,13,1)), url('Cover%20Art.jpg');
+            background-size: cover; background-position: center;
+            margin-bottom: 2rem;
         }
 
-        .urdu-text {
-            font-family: 'Noto Nastaliq Urdu', serif;
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
+        header h1 { font-size: 4.5rem; color: #fff; letter-spacing: -1px; line-height: 1.2; }
+        .urdu-accent { 
+            font-family: 'Noto Nastaliq Urdu', serif; 
+            color: var(--accent-color); 
+            font-size: 2.8rem;
+            margin-left: 15px;
+            font-style: normal;
         }
 
-        header h1 { font-size: 5.5rem; margin-bottom: 1.5rem; color: #fff; letter-spacing: -2px; line-height: 1; }
-        header p { font-size: 1.3rem; color: #ccc; max-width: 700px; margin: 0 auto; font-family: 'Cormorant Garamond', serif; font-style: italic; }
+        header p { font-size: 1.3rem; color: #ccc; max-width: 750px; margin: 2rem auto 0; font-family: 'Cormorant Garamond', serif; font-style: italic; }
         header p a { color: var(--accent-color); text-decoration: none; border-bottom: 1px solid var(--accent-color); }
 
-        /* Writing (from the mountaintop) */
-        section { padding: 8rem 0; border-bottom: 1px solid #1a1a1a; }
-        h2 { font-size: 3.5rem; margin-bottom: 4rem; color: var(--accent-color); text-transform: lowercase; }
+        /* Split Section Layout */
+        .split-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr; /* Writing side slightly wider */
+            gap: 5rem;
+            padding: 6rem 0;
+            border-bottom: 1px solid #1a1a1a;
+        }
 
-        .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; }
+        h2 { font-size: 3rem; margin-bottom: 3rem; color: var(--accent-color); text-transform: lowercase; }
+
+        /* Left Side: Writing */
         .essay-item { text-decoration: none; display: block; color: inherit; margin-bottom: 4rem; }
-        .essay-item h3 { font-size: 2.2rem; margin-bottom: 1.5rem; color: #fff; line-height: 1.1; }
-        .essay-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--dim-text); position: relative; padding-left: 1.5rem; border-left: 1px solid var(--accent-color); }
+        .essay-item h3 { font-size: 2rem; margin-bottom: 1rem; color: #fff; line-height: 1.1; }
+        .essay-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--dim-text); padding-left: 1.5rem; border-left: 1px solid var(--accent-color); }
         .essay-item:hover h3 { color: var(--accent-color); }
 
-        /* Music Players */
-        .music-item { margin-bottom: 4rem; }
-        .music-title { font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-color); margin-bottom: 1rem; display: block; }
-        .spotify-container { width: 100%; border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        /* Right Side: Sounds */
+        .music-item { margin-bottom: 3rem; }
+        .music-title { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-color); margin-bottom: 0.8rem; display: block; }
+        .spotify-container { width: 100%; border-radius: 8px; overflow: hidden; background: #000; }
 
-        /* Spaces */
+        /* Spaces Section */
+        section.spaces-section { padding: 8rem 0; border-bottom: 1px solid #1a1a1a; }
         .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
         .project-box {
             border: 1px solid #222; overflow: hidden; text-decoration: none; color: inherit;
             display: flex; flex-direction: column; transition: 0.4s; background: #000;
         }
         .project-box:hover { border-color: var(--accent-color); }
-        /* Using KG Lahore.jpeg here */
         .project-img { width: 100%; height: 350px; object-fit: cover; filter: grayscale(100%); transition: 0.8s ease; opacity: 0.8; }
         .project-box:hover .project-img { filter: grayscale(0%); opacity: 1; }
         .project-content { padding: 2rem; }
-        .coming-soon { opacity: 0.4; display: flex; align-items: center; justify-content: center; font-style: italic; height: 350px; border: 1px dashed #333; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;}
+        .coming-soon { opacity: 0.3; display: flex; align-items: center; justify-content: center; font-style: italic; height: 350px; border: 1px dashed #333; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;}
 
         footer { padding: 6rem 0; text-align: center; color: var(--dim-text); font-size: 0.8rem; letter-spacing: 2px; line-height: 2; }
 
-        @media (max-width: 768px) {
-            header h1 { font-size: 3.5rem; }
-            .work-grid, .projects { grid-template-columns: 1fr; }
+        /* Responsive stack for mobile */
+        @media (max-width: 900px) {
+            header h1 { font-size: 3rem; }
+            .urdu-accent { font-size: 2rem; }
+            .split-grid { grid-template-columns: 1fr; gap: 4rem; }
+            .projects { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -118,8 +117,8 @@
     <nav>
         <div style="font-weight: 600; letter-spacing: 3px; font-size: 0.8rem; color: #fff;">ZARA SUHAIL MANNAN</div>
         <div class="nav-links">
-            <a href="#writing">Writing</a>
-            <a href="#music">Music</a>
+            <a href="#mountaintop">Writing</a>
+            <a href="#sounds">Sounds</a>
             <a href="http://kitabghar.co" target="_blank">Kitab Ghar</a>
             <div class="social-icons">
                 <a href="https://instagram.com/tilism.e.zara" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -129,72 +128,73 @@
     </nav>
 
     <header>
-        <div class="urdu-text">طلسمِ زارا</div>
-        <h1>Hi, my name is Zara.</h1>
-        <p>Welcome to my haus: this is an archive of my work in music, writing, performance art and education. At my best, I am co-founder of the <a href="http://kitabghar.co" target="_blank">Kitab Ghar</a> public library movement.</p>
+        <h1>Welcome to <span class="urdu-accent">طلسمِ زارا</span></h1>
+        <p>"This is an archive of my work in music, writing, performance art and education. At my best, I am co-founder of the <a href="http://kitabghar.co" target="_blank">Kitab Ghar</a> public library movement."</p>
     </header>
 
     <div class="container">
         
-        <section id="writing">
-            <h2>from the mountaintop</h2>
-            <div class="work-grid">
-                <div>
-                    <a href="https://medium.com/@zulfiqarmannan/transitioning-in-pakistan-1b83d2461086" target="_blank" class="essay-item">
-                        <h3>Transitioning in Pakistan</h3>
-                        <p class="essay-quote">"We are moorats; we have enjoined God as subordinates in the act of creation. We imperfectly attempt to mould our bodies into the shape of our soul..."</p>
-                    </a>
-                    <a href="https://www.thealephreview.com/post/a-treatise-on-colonialism" target="_blank" class="essay-item">
-                        <h3>A Treatise on Colonialism</h3>
-                        <p class="essay-quote">"I proclaim a treatise on colonialism: (1) First, you dive headfirst into the mirage for foolishness is holy, (2) Taste it all, and then tell the whole truth still..."</p>
-                    </a>
-                </div>
-                <div>
-                    <a href="https://www.saaganthology.com/columns/to-be-woman-and-hip-in-dunya" target="_blank" class="essay-item">
-                        <h3>To be Woman and Hip in Dunya</h3>
-                        <p class="essay-quote">"To be woman and hip: Is to be okay not being woman at all, to be unafraid of androgyny / Allow yourself all the ugly of humanity / I am maila like my city."</p>
-                    </a>
-                    <a href="https://medium.com/@zulfiqarmannan/shah-jahan-e-lahore-%D8%B4%D8%A7%DB%81-%D8%AC%DB%81%D8%A7%D9%86%D9%90-%D9%84%D8%A7%DB%81%D9%88%D8%B1-590c1f71813b" target="_blank" class="essay-item">
-                        <h3>Shah Jahan e Lahore</h3>
-                        <p class="essay-quote">"آہ کو چاہیے ایک عمر اثر ہوتے تک... an elegy for a father and a city."</p>
-                    </a>
-                </div>
-            </div>
-        </section>
+        <div class="split-grid">
+            <!-- LEFT COLUMN: WRITING -->
+            <div id="mountaintop">
+                <h2>from the mountaintop</h2>
+                
+                <a href="https://medium.com/@zulfiqarmannan/transitioning-in-pakistan-1b83d2461086" target="_blank" class="essay-item">
+                    <h3>Transitioning in Pakistan</h3>
+                    <p class="essay-quote">"We are moorats; we have enjoined God as subordinates in the act of creation. We imperfectly attempt to mould our bodies into the shape of our soul..."</p>
+                </a>
+                
+                <a href="https://www.thealephreview.com/post/a-treatise-on-colonialism" target="_blank" class="essay-item">
+                    <h3>A Treatise on Colonialism</h3>
+                    <p class="essay-quote">"I proclaim a treatise on colonialism: (1) First, you dive headfirst into the mirage for foolishness is holy, (2) Taste it all, and then tell the whole truth still..."</p>
+                </a>
 
-        <section id="music">
-            <h2>the sound</h2>
-            
-            <div class="music-item">
-                <span class="music-title">Latest Release</span>
-                <div class="spotify-container">
-                    <iframe src="https://open.spotify.com/embed/album/29wiihYUVa2L0EmS78KnRb" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                </div>
+                <a href="https://www.saaganthology.com/columns/to-be-woman-and-hip-in-dunya" target="_blank" class="essay-item">
+                    <h3>To be Woman and Hip in Dunya</h3>
+                    <p class="essay-quote">"To be woman and hip: Is to be okay not being woman at all, to be unafraid of androgyny / Allow yourself all the ugly of humanity / I am maila like my city."</p>
+                </a>
+
+                <a href="https://medium.com/@zulfiqarmannan/shah-jahan-e-lahore-%D8%B4%D8%A7%DB%81-%D8%AC%DB%81%D8%A7%D9%86%D9%90-%D9%84%D8%A7%DB%81%D9%88%D8%B1-590c1f71813b" target="_blank" class="essay-item">
+                    <h3>Shah Jahan e Lahore</h3>
+                    <p class="essay-quote">"آہ کو چاہیے ایک عمر اثر ہوتے تک... an elegy for a father and a city."</p>
+                </a>
             </div>
 
-            <div class="music-item">
-                <span class="music-title">Raah-e-Ishq, 2024 – produced by Jahanzaib Aslam</span>
-                <div class="spotify-container">
-                    <iframe src="https://open.spotify.com/embed/album/1CZAWVwEiTPAGndO9ymMx6" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            <!-- RIGHT COLUMN: SOUNDS -->
+            <div id="sounds">
+                <h2>sounds</h2>
+                
+                <div class="music-item">
+                    <span class="music-title">Latest Release</span>
+                    <div class="spotify-container">
+                        <iframe src="https://open.spotify.com/embed/album/29wiihYUVa2L0EmS78KnRb" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                    </div>
+                </div>
+
+                <div class="music-item">
+                    <span class="music-title">Raah-e-Ishq, 2024</span>
+                    <div class="spotify-container">
+                        <iframe src="https://open.spotify.com/embed/album/1CZAWVwEiTPAGndO9ymMx6" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                    </div>
+                </div>
+
+                <div class="music-item">
+                    <span class="music-title">Ye Duniya Ek Boys' Club Hai, 2020</span>
+                    <div class="spotify-container">
+                        <iframe src="https://open.spotify.com/embed/album/7i9DPE1fTrfKuPrXaWJhCB" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                    </div>
+                </div>
+
+                <div class="music-item">
+                    <span class="music-title">Alter/Native, 2019</span>
+                    <div class="spotify-container">
+                        <iframe src="https://open.spotify.com/embed/album/2Cn5uX3HQlIwwS73WtkvXN" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <div class="music-item">
-                <span class="music-title">Ye Duniya Ek Boys' Club Hai, 2020 (Piano Demos)</span>
-                <div class="spotify-container">
-                    <iframe src="https://open.spotify.com/embed/album/7i9DPE1fTrfKuPrXaWJhCB" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                </div>
-            </div>
-
-            <div class="music-item">
-                <span class="music-title">Alter/Native, 2019 – produced by Andrew Evren</span>
-                <div class="spotify-container">
-                    <iframe src="https://open.spotify.com/embed/album/2Cn5uX3HQlIwwS73WtkvXN" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                </div>
-            </div>
-        </section>
-
-        <section id="spaces">
+        <section class="spaces-section" id="spaces">
             <h2>spaces</h2>
             <div class="projects">
                 <a href="http://kitabghar.co" target="_blank" class="project-box">
