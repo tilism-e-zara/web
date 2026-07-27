@@ -29,7 +29,7 @@
         h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-        /* Navigation */
+        /* Navigation - Fixed for Mobile */
         nav {
             position: absolute;
             top: 0; left: 0; width: 100%;
@@ -39,10 +39,10 @@
         }
 
         .brand-name { font-weight: 600; letter-spacing: 2px; font-size: 0.7rem; color: #fff; }
-        .nav-links { display: flex; align-items: center; gap: 1.5rem; }
-        nav a { color: #fff; text-decoration: none; font-size: 0.7rem; letter-spacing: 1px; font-weight: 600; transition: 0.3s; }
+        .nav-links { display: flex; align-items: center; gap: 1.2rem; }
+        nav a { color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 1px; font-weight: 600; transition: 0.3s; }
         nav a:hover { color: var(--accent-color); }
-        .social-icons { display: flex; gap: 1rem; margin-left: 0.5rem; font-size: 1.1rem; }
+        .social-icons { display: flex; gap: 0.8rem; font-size: 1rem; }
 
         /* Hero Section */
         header {
@@ -121,7 +121,7 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* Writing/Sounds Split */
+        /* Split Grid (Writing & Sounds) */
         .split-grid {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
@@ -142,22 +142,20 @@
         .music-title { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-color); margin-bottom: 0.8rem; display: block; }
         .spotify-container { width: 100%; border-radius: 8px; overflow: hidden; background: #000; }
 
-        /* PURPLE SECTIONS */
-        .purple-section {
-            background-color: var(--accent-color);
-            color: #0d0d0d;
-            padding: 8rem 0;
+        /* VISIONS SECTION - TEXT BASED */
+        .purple-section { background-color: var(--accent-color); color: #0d0d0d; padding: 8rem 0; }
+        
+        .visions-list { display: flex; flex-direction: column; gap: 2rem; }
+        .vision-link {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: #000;
+            text-decoration: none;
+            line-height: 1;
+            transition: 0.4s;
+            font-style: italic;
         }
-
-        .visions-row {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            padding-bottom: 20px;
-        }
-        .video-card { min-width: 450px; background: #000; border-radius: 4px; overflow: hidden; text-align: center; }
-        .video-card iframe { width: 100%; height: 250px; display: block; }
-        .yt-link { display: block; padding: 10px; font-size: 0.7rem; color: var(--accent-color); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; }
+        .vision-link:hover { padding-left: 20px; color: #fff; text-shadow: 2px 2px 0px #000; }
 
         /* Projects Layout */
         .project-entry {
@@ -168,17 +166,9 @@
             margin-bottom: 8rem;
         }
         .project-entry.reverse { grid-template-columns: 1.2fr 0.8fr; }
-
-        .project-thumb {
-            width: 100%;
-            height: 450px;
-            background: #000;
-            overflow: hidden;
-            border: 1px solid #000;
-        }
+        .project-thumb { width: 100%; height: 450px; background: #000; overflow: hidden; border: 1px solid #000; }
         .project-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: 0.5s; }
         .project-thumb:hover img { opacity: 1; transform: scale(1.05); }
-
         .project-text h3 { font-size: 3.5rem; margin-bottom: 1.5rem; color: #000; line-height: 1; }
         .project-text p { font-size: 1.2rem; font-family: 'Cormorant Garamond', serif; font-style: italic; margin-bottom: 2.5rem; color: #222; line-height: 1.6; }
         .project-link-btn {
@@ -186,7 +176,7 @@
             text-decoration: none; font-weight: 600; letter-spacing: 2px; font-size: 0.8rem; text-transform: uppercase;
         }
 
-        /* Spaces Section */
+        /* Spaces */
         section.spaces-section { padding: 8rem 0; border-bottom: 1px solid #1a1a1a; }
         .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
         .project-box {
@@ -198,11 +188,11 @@
         .project-box:hover .project-img { filter: grayscale(0%); opacity: 1; }
         .project-content { padding: 2.5rem; }
 
-        /* CONTACT SECTION */
+        /* CONTACT */
         .contact-section { padding: 10rem 0; text-align: center; }
         .contact-link { 
             font-family: 'Cormorant Garamond', serif; font-style: italic;
-            font-size: clamp(2rem, 5vw, 4rem); color: var(--accent-color);
+            font-size: clamp(2rem, 5vw, 3.5rem); color: var(--accent-color);
             text-decoration: none; border-bottom: 1px solid var(--accent-color);
             transition: 0.3s;
         }
@@ -210,12 +200,18 @@
 
         footer { padding: 5rem 0; text-align: center; color: var(--dim-text); font-size: 0.8rem; letter-spacing: 2px; }
 
-        @media (max-width: 900px) {
-            .hero-main-title { font-size: 3rem; }
+        /* MOBILE FIXES */
+        @media (max-width: 600px) {
+            nav { padding: 1rem; }
+            .brand-name { display: none; } /* Prevents top bar clutter */
+            .nav-links { gap: 0.8rem; width: 100%; justify-content: space-between; }
+            nav a { font-size: 0.65rem; }
+            .hero-main-title { font-size: 2.8rem; }
+            .urdu-accent { font-size: 4.5rem; }
             .split-grid, .project-entry, .project-entry.reverse { grid-template-columns: 1fr; gap: 3rem; }
-            .video-card { min-width: 320px; }
-            .project-thumb { height: 300px; }
             .projects-grid { grid-template-columns: 1fr; }
+            .project-thumb { height: 300px; }
+            .purple-section { padding: 5rem 0; }
         }
     </style>
 </head>
@@ -230,7 +226,6 @@
             <a href="#projects">Projects</a>
             <div class="social-icons">
                 <a href="https://instagram.com/tilism.e.zara" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/zara-suhail-mannan-b7136a99/" target="_blank"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </nav>
@@ -257,15 +252,15 @@
                 <h2 class="dark-h2">from the mountaintop</h2>
                 <a href="https://medium.com/@zulfiqarmannan/transitioning-in-pakistan-1b83d2461086" target="_blank" class="essay-item">
                     <h3>Transitioning in Pakistan</h3>
-                    <p class="essay-quote">"We are moorats; we have enjoined God as subordinates in the act of creation. We imperfectly attempt to mould our bodies into the shape of our soul..."</p>
+                    <p class="essay-quote">"We are moorats; we have enjoined God as subordinates in the act of creation..."</p>
                 </a>
                 <a href="https://www.thealephreview.com/post/a-treatise-on-colonialism" target="_blank" class="essay-item">
                     <h3>A Treatise on Colonialism</h3>
-                    <p class="essay-quote">"I proclaim a treatise on colonialism: (1) First, you dive headfirst into the mirage for foolishness is holy, (2) Taste it all, and then tell the whole truth still..."</p>
+                    <p class="essay-quote">"I proclaim a treatise on colonialism: (1) First, you dive headfirst into the mirage..."</p>
                 </a>
                 <a href="https://www.saaganthology.com/columns/to-be-woman-and-hip-in-dunya" target="_blank" class="essay-item">
                     <h3>To be Woman and Hip in Dunya</h3>
-                    <p class="essay-quote">"To be woman and hip: Is to be okay not being woman at all, to be unafraid of androgyny / Allow yourself all the ugly of humanity / I am maila like my city."</p>
+                    <p class="essay-quote">"Allow yourself all the ugly of humanity / I am maila like my city."</p>
                 </a>
             </div>
             <div id="sounds">
@@ -283,27 +278,15 @@
         </div>
     </div>
 
-    <!-- VISIONS -->
+    <!-- VISIONS (TEXT-BASED GALLERY) -->
     <section class="purple-section" id="visions">
         <div class="container">
             <h2 class="light-h2">visions</h2>
-            <div class="visions-row">
-                <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/1v05iL0Q1-k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <a href="https://youtu.be/1v05iL0Q1-k" target="_blank" class="yt-link">Watch on YouTube</a>
-                </div>
-                <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/S265P-N-P64" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <a href="https://youtu.be/S265P-N-P64" target="_blank" class="yt-link">Watch on YouTube</a>
-                </div>
-                <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/i3o5rI_K-Fk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <a href="https://youtu.be/i3o5rI_K-Fk" target="_blank" class="yt-link">Watch on YouTube</a>
-                </div>
-                <div class="video-card">
-                    <iframe src="https://www.youtube.com/embed/jZ_y-uE93Y8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <a href="https://youtu.be/jZ_y-uE93Y8" target="_blank" class="yt-link">Watch on YouTube</a>
-                </div>
+            <div class="visions-list">
+                <a href="https://youtu.be/1v05iL0Q1-k" target="_blank" class="vision-link">Raah-e-Ishq (2024)</a>
+                <a href="https://youtu.be/S265P-N-P64" target="_blank" class="vision-link">Ascending (2022)</a>
+                <a href="https://youtu.be/i3o5rI_K-Fk" target="_blank" class="vision-link">Kya Karun (2021)</a>
+                <a href="https://youtu.be/jZ_y-uE93Y8" target="_blank" class="vision-link">Ye Duniya (2020)</a>
             </div>
         </div>
     </section>
@@ -313,17 +296,15 @@
         <div class="container">
             <h2 class="light-h2">projects</h2>
             
-            <!-- Project 1: Paradise Sought -->
             <div class="project-entry">
                 <div class="project-thumb"><img src="Paradise%20Sought.jpg" alt="Paradise Sought"></div>
                 <div class="project-text">
                     <h3>Paradise Sought</h3>
-                    <p>"Paradise Sought found guidance from the histories and stories of resistance that work to dissect and unveil the otherwise invisible logics of domination, practices of subjugation, and structural dynamics of exploitation that exist in the status quo."</p>
+                    <p>"Paradise Sought found guidance from the histories and stories of resistance that work to dissect and unveil the otherwise invisible logics of domination..."</p>
                     <a href="https://sites.google.com/view/paradisesought/home" target="_blank" class="project-link-btn">Visit Archive</a>
                 </div>
             </div>
 
-            <!-- Project 2: Kitab Ghar Publications -->
             <div class="project-entry reverse">
                 <div class="project-text">
                     <h3>Kitab Ghar Publications</h3>
@@ -335,7 +316,7 @@
         </div>
     </section>
 
-    <!-- SPACES & CONTACT -->
+    <!-- SPACES -->
     <div class="container">
         <section class="spaces-section" id="spaces">
             <h2 class="dark-h2">spaces</h2>
