@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zara Suhail Mannan | Lahore</title>
+    <title>Zara Suhail Mannan | Tilism</title>
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;600&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -13,7 +13,6 @@
             --bg-color: #0d0d0d;
             --text-color: #e8e8e8;
             --accent-color: #d1a3ff; /* Pastel Lavender */
-            --dark-accent: #1a1a1a;
             --dim-text: #a0a0a0;
         }
 
@@ -28,7 +27,6 @@
         }
 
         h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; }
-
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
         /* Navigation */
@@ -74,7 +72,6 @@
             margin-bottom: 0.6em;
             z-index: 1;
             font-style: normal;
-            opacity: 0.9;
         }
 
         header p { 
@@ -152,27 +149,19 @@
             padding: 8rem 0;
         }
 
-        /* Visions Horizontal Row */
         .visions-row {
             display: flex;
             gap: 20px;
             overflow-x: auto;
             padding-bottom: 20px;
             scrollbar-width: thin;
-            scrollbar-color: #000 transparent;
         }
         .visions-row::-webkit-scrollbar { height: 6px; }
         .visions-row::-webkit-scrollbar-thumb { background: #000; border-radius: 10px; }
 
-        .video-card {
-            min-width: 450px;
-            background: #000;
-            border-radius: 4px;
-            overflow: hidden;
-        }
+        .video-card { min-width: 450px; background: #000; border-radius: 4px; overflow: hidden; }
         .video-card iframe { width: 100%; height: 250px; display: block; }
 
-        /* Projects Section */
         .projects-featured {
             display: grid;
             grid-template-columns: 0.8fr 1.2fr;
@@ -183,9 +172,6 @@
             width: 100%;
             height: 400px;
             background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
             border: 1px solid #000;
         }
@@ -193,7 +179,7 @@
         .project-thumb:hover img { opacity: 1; transform: scale(1.05); }
 
         .project-text h3 { font-size: 3.5rem; margin-bottom: 1.5rem; color: #000; }
-        .project-text p { font-size: 1.2rem; font-family: 'Cormorant Garamond', serif; font-style: italic; margin-bottom: 2rem; color: #222; }
+        .project-text p { font-size: 1.15rem; font-family: 'Cormorant Garamond', serif; font-style: italic; margin-bottom: 2.5rem; color: #222; line-height: 1.6; }
         .project-link-btn {
             display: inline-block;
             padding: 12px 30px;
@@ -206,7 +192,7 @@
             text-transform: uppercase;
         }
 
-        /* Spaces (Original) */
+        /* ORIGINAL SPACES SECTION (Dark) */
         section.spaces-section { padding: 8rem 0; border-bottom: 1px solid #1a1a1a; }
         .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
         .project-box {
@@ -224,7 +210,7 @@
         @media (max-width: 900px) {
             .hero-main-title { font-size: 3rem; }
             .split-grid, .projects-featured { grid-template-columns: 1fr; gap: 4rem; }
-            .video-card { min-width: 300px; }
+            .video-card { min-width: 320px; }
             .project-thumb { height: 250px; }
             .projects-grid { grid-template-columns: 1fr; }
         }
@@ -257,7 +243,7 @@
                 <div class="ticker-item"><span>SAAG Anthology:</span> Zara Suhail Mannan f.k.a. Zulfi is a writer and musician</div>
                 <div class="ticker-item"><span>DAWN:</span> Karachi's Kitab Ghar is saved after citizens donate</div>
                 <div class="ticker-item"><span>Press:</span> Zara set the record straight about being Pakistani</div>
-                <!-- Duplicate for loop -->
+                <!-- Duplicate -->
                 <div class="ticker-item"><span>Arab News:</span> Kitab Ghar Karachi rekindles fading library culture in Pakistan</div>
                 <div class="ticker-item"><span>SAAG Anthology:</span> Zara Suhail Mannan f.k.a. Zulfi is a writer and musician</div>
                 <div class="ticker-item"><span>DAWN:</span> Karachi's Kitab Ghar is saved after citizens donate</div>
@@ -267,31 +253,25 @@
     </header>
 
     <div class="container">
-        
-        <!-- SECTION 1: WRITING & SOUNDS -->
+        <!-- WRITING & SOUNDS -->
         <div class="split-grid">
             <div id="mountaintop">
                 <h2 class="dark-h2">from the mountaintop</h2>
-                
                 <a href="https://medium.com/@zulfiqarmannan/transitioning-in-pakistan-1b83d2461086" target="_blank" class="essay-item">
                     <h3>Transitioning in Pakistan</h3>
                     <p class="essay-quote">"We are moorats; we have enjoined God as subordinates in the act of creation. We imperfectly attempt to mould our bodies into the shape of our soul..."</p>
                 </a>
-                
                 <a href="https://www.thealephreview.com/post/a-treatise-on-colonialism" target="_blank" class="essay-item">
                     <h3>A Treatise on Colonialism</h3>
                     <p class="essay-quote">"I proclaim a treatise on colonialism: (1) First, you dive headfirst into the mirage for foolishness is holy, (2) Taste it all, and then tell the whole truth still..."</p>
                 </a>
-
                 <a href="https://www.saaganthology.com/columns/to-be-woman-and-hip-in-dunya" target="_blank" class="essay-item">
                     <h3>To be Woman and Hip in Dunya</h3>
                     <p class="essay-quote">"To be woman and hip: Is to be okay not being woman at all, to be unafraid of androgyny / Allow yourself all the ugly of humanity / I am maila like my city."</p>
                 </a>
             </div>
-
             <div id="sounds">
                 <h2 class="dark-h2">sounds</h2>
-                
                 <div class="music-item"><span class="music-title">Latest Release</span>
                     <div class="spotify-container"><iframe src="https://open.spotify.com/embed/album/29wiihYUVa2L0EmS78KnRb" width="100%" height="80" frameBorder="0"></iframe></div>
                 </div>
@@ -305,38 +285,37 @@
         </div>
     </div>
 
-    <!-- NEW SECTION 2: VISIONS (Purple BG) -->
+    <!-- VISIONS (Purple BG) -->
     <section class="purple-section" id="visions">
         <div class="container">
             <h2 class="light-h2">visions</h2>
             <div class="visions-row">
-                <div class="video-card"><iframe src="https://www.youtube.com/embed/1v05iL0Q1-k" frameborder="0" allowfullscreen></iframe></div>
-                <div class="video-card"><iframe src="https://www.youtube.com/embed/S265P-N-P64" frameborder="0" allowfullscreen></iframe></div>
-                <div class="video-card"><iframe src="https://www.youtube.com/embed/i3o5rI_K-Fk" frameborder="0" allowfullscreen></iframe></div>
-                <div class="video-card"><iframe src="https://www.youtube.com/embed/jZ_y-uE93Y8" frameborder="0" allowfullscreen></iframe></div>
+                <div class="video-card"><iframe src="https://www.youtube.com/embed/1v05iL0Q1-k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="video-card"><iframe src="https://www.youtube.com/embed/S265P-N-P64" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="video-card"><iframe src="https://www.youtube.com/embed/i3o5rI_K-Fk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="video-card"><iframe src="https://www.youtube.com/embed/jZ_y-uE93Y8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
             </div>
         </div>
     </section>
 
-    <!-- NEW SECTION 3: PROJECTS (Purple BG) -->
+    <!-- PROJECTS (Purple BG) -->
     <section class="purple-section" id="projects" style="border-top: 1px solid #000;">
         <div class="container">
             <h2 class="light-h2">projects</h2>
             <div class="projects-featured">
                 <div class="project-thumb">
-                    <!-- Replace with a screenshot of the project site later -->
-                    <img src="Cover%20Art.jpg" alt="Paradise Sought">
+                    <img src="Paradise%20Sought.jpg" alt="Paradise Sought Project">
                 </div>
                 <div class="project-text">
                     <h3>Paradise Sought</h3>
-                    <p>An interactive digital archive exploring the South Asian diaspora's pursuit of a promised land. Paradise Sought navigates the cartographies of memory, citizenship, and the spiritual geography of home.</p>
+                    <p>"Paradise Sought found guidance from the histories and stories of resistance that work to dissect and unveil the otherwise invisible logics of domination, practices of subjugation, and structural dynamics of exploitation that exist in the status quo."</p>
                     <a href="https://sites.google.com/view/paradisesought/home" target="_blank" class="project-link-btn">Visit Archive</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ORIGINAL SPACES SECTION (Dark) -->
+    <!-- SPACES (Dark) -->
     <div class="container">
         <section class="spaces-section" id="spaces">
             <h2 class="dark-h2">spaces</h2>
@@ -359,6 +338,5 @@
             <p>&copy; 2026 ZARA SUHAIL MANNAN. <br> BUILT FROM GULISTAN.</p>
         </footer>
     </div>
-
 </body>
 </html>
