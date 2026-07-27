@@ -29,7 +29,7 @@
         h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-        /* Navigation - Fixed for Mobile Bleed */
+        /* Navigation - Fixed for Mobile Clutter */
         nav {
             position: absolute;
             top: 0; left: 0; width: 100%;
@@ -68,8 +68,8 @@
             color: var(--accent-color); 
             font-size: clamp(5rem, 15vw, 10rem); 
             display: block;
-            margin-top: -0.6em; /* Layering with 'Welcome to' */
-            margin-bottom: 1.2em; /* CRITICAL: Push bio down to avoid overlap */
+            margin-top: -0.6em;
+            margin-bottom: 1.2em; /* Pushes bio down */
             z-index: 1;
             font-style: normal;
         }
@@ -120,7 +120,7 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* Split Sections */
+        /* Split Sections (Writing & Sounds) */
         .split-grid {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
@@ -141,7 +141,7 @@
         .music-title { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-color); margin-bottom: 0.8rem; display: block; }
         .spotify-container { width: 100%; border-radius: 8px; overflow: hidden; background: #000; }
 
-        /* VISIONS */
+        /* VISIONS - Text Links */
         .purple-section { background-color: var(--accent-color); color: #0d0d0d; padding: 8rem 0; }
         .visions-list { display: flex; flex-direction: column; gap: 2rem; }
         .vision-link {
@@ -200,12 +200,11 @@
             .brand-name { display: none; }
             .nav-links { gap: 0.5rem; width: 100%; justify-content: space-between; }
             nav a { font-size: 0.65rem; }
-            .hero-main-title { font-size: 3rem; }
-            .urdu-accent { font-size: 5rem; margin-bottom: 2em; } /* Pushes bio very far on mobile */
-            .split-grid, .project-entry, .project-entry.reverse { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-main-title { font-size: 2.8rem; }
+            .urdu-accent { font-size: 4.5rem; margin-bottom: 2.5em; }
+            .split-grid, .project-entry, .project-entry.reverse { grid-template-columns: 1fr; gap: 4rem; }
             .projects-grid { grid-template-columns: 1fr; }
             .project-thumb { height: 300px; }
-            .purple-section { padding: 5rem 0; }
         }
     </style>
 </head>
@@ -218,7 +217,9 @@
             <a href="#sounds">Sounds</a>
             <a href="#visions">Visions</a>
             <a href="#projects">Projects</a>
-            <a href="https://instagram.com/tilism.e.zara" target="_blank"><i class="fab fa-instagram"></i></a>
+            <div class="social-icons">
+                <a href="https://instagram.com/tilism.e.zara" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
     </nav>
 
@@ -242,17 +243,25 @@
         <div class="split-grid">
             <div id="mountaintop">
                 <h2 class="dark-h2">from the mountaintop</h2>
+                
                 <a href="https://medium.com/@zulfiqarmannan/transitioning-in-pakistan-1b83d2461086" target="_blank" class="essay-item">
                     <h3>Transitioning in Pakistan</h3>
-                    <p class="essay-quote">"We are moorats; we have enjoined God as subordinates in the act of creation..."</p>
+                    <p class="essay-quote">"We are moorats; we have enjoined God as subordinates in the act of creation. We imperfectly attempt to mould our bodies into the shape of our soul..."</p>
                 </a>
+                
                 <a href="https://www.thealephreview.com/post/a-treatise-on-colonialism" target="_blank" class="essay-item">
                     <h3>A Treatise on Colonialism</h3>
-                    <p class="essay-quote">"I proclaim a treatise on colonialism: (1) First, you dive headfirst into the mirage..."</p>
+                    <p class="essay-quote">"I proclaim a treatise on colonialism: (1) First, you dive headfirst into the mirage for foolishness is holy, (2) Taste it all, and then tell the whole truth still..."</p>
                 </a>
+
                 <a href="https://www.saaganthology.com/columns/to-be-woman-and-hip-in-dunya" target="_blank" class="essay-item">
                     <h3>To be Woman and Hip in Dunya</h3>
                     <p class="essay-quote">"Allow yourself all the ugly of humanity / I am maila like my city."</p>
+                </a>
+
+                <a href="https://medium.com/@zulfiqarmannan/shah-jahan-e-lahore-%D8%B4%D8%A7%DB%81-%D8%AC%DB%81%D8%A7%D9%86%D9%90-%D9%84%D8%A7%DB%81%D9%88%D8%B1-590c1f71813b" target="_blank" class="essay-item">
+                    <h3>Shah Jahan e Lahore</h3>
+                    <p class="essay-quote">"آہ کو چاہیے ایک عمر اثر ہوتے تک... an elegy for a father and a city."</p>
                 </a>
             </div>
             
@@ -300,6 +309,7 @@
         <div class="container">
             <h2 class="light-h2">projects</h2>
             
+            <!-- Project 1 -->
             <div class="project-entry">
                 <div class="project-thumb"><img src="Paradise%20Sought.jpg" alt="Paradise Sought"></div>
                 <div class="project-text">
@@ -309,6 +319,7 @@
                 </div>
             </div>
 
+            <!-- Project 2 -->
             <div class="project-entry reverse">
                 <div class="project-text">
                     <h3>Kitab Ghar Publications</h3>
