@@ -48,7 +48,7 @@
         nav a:hover { color: var(--accent-color); }
         .social-icons { display: flex; gap: 1.2rem; margin-left: 1rem; font-size: 1.1rem; }
 
-        /* Hero Section with Zoom/Focus "Crop" */
+        /* Hero Section with Cover Art.jpg */
         header {
             position: relative;
             height: 100vh;
@@ -57,23 +57,13 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            /* Note: We use %20 to handle the space in your filename */
             background: linear-gradient(rgba(0,0,0,0.6), rgba(13,13,13,1)), 
-                        url('https://lh3.googleusercontent.com/sitesv/AG8ngQUIbbln4UhFI_uzfZhGNpcG9CP8UsINGREk_mp8Uoxi9fw-OGYm_SLbrhtb8wbJ8gJ7h1j9zRP49qn4Eh7jItVV1mLjDbBtTgQH2UttVdtAXRsBAFflQtSGq9uvICYT_BTd-ZTLZgGmis-8hSGxiMmduPZ7vdfjc_C-OrH6Vx-tknq4pf7eIx6rgXcHcsSo9DuZPeIigwJ-quud=w1280');
-            /* CSS "CROP": Zooming 150% and shifting left to focus on you */
-            background-size: 150%; 
-            background-position: 15% center;
+                        url('Cover%20Art.jpg');
+            background-size: cover; 
+            background-position: center;
             background-repeat: no-repeat;
             margin-bottom: 4rem;
-        }
-
-        .image-caption {
-            position: absolute;
-            bottom: 2rem;
-            left: 2rem;
-            font-size: 0.7rem;
-            letter-spacing: 1px;
-            color: rgba(255,255,255,0.4);
-            text-transform: uppercase;
         }
 
         .urdu-text {
@@ -109,6 +99,7 @@
             display: flex; flex-direction: column; transition: 0.4s; background: #000;
         }
         .project-box:hover { border-color: var(--accent-color); }
+        /* Using KG Lahore.jpeg here */
         .project-img { width: 100%; height: 350px; object-fit: cover; filter: grayscale(100%); transition: 0.8s ease; opacity: 0.8; }
         .project-box:hover .project-img { filter: grayscale(0%); opacity: 1; }
         .project-content { padding: 2rem; }
@@ -118,7 +109,6 @@
 
         @media (max-width: 768px) {
             header h1 { font-size: 3.5rem; }
-            header { background-size: cover; background-position: center; } /* Reset crop for mobile so it fits */
             .work-grid, .projects { grid-template-columns: 1fr; }
         }
     </style>
@@ -139,7 +129,6 @@
     </nav>
 
     <header>
-        <div class="image-caption">Yale University, 2019</div>
         <div class="urdu-text">طلسمِ زارا</div>
         <h1>Hi, my name is Zara.</h1>
         <p>Welcome to my haus: this is an archive of my work in music, writing, performance art and education. At my best, I am co-founder of the <a href="http://kitabghar.co" target="_blank">Kitab Ghar</a> public library movement.</p>
@@ -209,7 +198,7 @@
             <h2>spaces</h2>
             <div class="projects">
                 <a href="http://kitabghar.co" target="_blank" class="project-box">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZqooNf6c5wC3hdLb7VbsunbADWvCunrLk--URdiciKQ&s=10" alt="Kitab Ghar Library" class="project-img">
+                    <img src="KG%20Lahore.jpeg" alt="Kitab Ghar Lahore" class="project-img">
                     <div class="project-content">
                         <h3>Kitab Ghar</h3>
                         <p style="font-size: 0.75rem; letter-spacing: 2px; color: var(--accent-color); text-transform: uppercase; margin-bottom: 1rem;">Lahore + Karachi</p>
