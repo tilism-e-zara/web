@@ -104,4 +104,131 @@
         .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
         .project-box {
             border: 1px solid #222;
-            ov
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            transition: 0.4s;
+            background: #000;
+        }
+        .project-box:hover { border-color: var(--accent-color); }
+        .project-img { width: 100%; height: 350px; object-fit: cover; filter: grayscale(100%); transition: 0.8s ease; opacity: 0.8; }
+        .project-box:hover .project-img { filter: grayscale(0%); opacity: 1; }
+        .project-content { padding: 2rem; }
+        .coming-soon { opacity: 0.4; display: flex; align-items: center; justify-content: center; font-style: italic; height: 350px; border: 1px dashed #333; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;}
+
+        footer { padding: 6rem 0; text-align: center; color: var(--dim-text); font-size: 0.8rem; letter-spacing: 2px; line-height: 2; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 3.5rem; }
+            .work-grid, .projects { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div style="font-weight: 600; letter-spacing: 3px; font-size: 0.8rem; color: #fff;">ZARA SUHAIL MANNAN</div>
+        <div class="nav-links">
+            <a href="#writing">Writing</a>
+            <a href="#music">Music</a>
+            <a href="http://kitabghar.co" target="_blank">Kitab Ghar</a>
+            <div class="social-icons">
+                <a href="https://instagram.com/tilism.e.zara" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/zara-suhail-mannan-b7136a99/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="image-caption">Yale University, 2019</div>
+        <div class="urdu-text">طلسمِ زارا</div>
+        <h1>Hi, my name is Zara.</h1>
+        <p>Welcome to my haus: this is an archive of my work in music, writing, performance art and education. At my best, I am co-founder of the <a href="http://kitabghar.co" target="_blank">Kitab Ghar</a> public library movement.</p>
+    </header>
+
+    <div class="container">
+        
+        <section id="writing">
+            <h2>from the mountaintop</h2>
+            <div class="work-grid">
+                <div>
+                    <a href="https://medium.com/@zulfiqarmannan/transitioning-in-pakistan-1b83d2461086" target="_blank" class="essay-item">
+                        <h3>Transitioning in Pakistan</h3>
+                        <p class="essay-quote">"The transition is not just of the body, but of the soul's geography—a map being redrawn in real-time."</p>
+                    </a>
+                    <a href="https://www.thealephreview.com/post/a-treatise-on-colonialism" target="_blank" class="essay-item">
+                        <h3>A Treatise on Colonialism</h3>
+                        <p class="essay-quote">"Colonialism is not just a historical event; it is a way of seeing that remains stubbornly intact."</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.saaganthology.com/columns/to-be-woman-and-hip-in-dunya" target="_blank" class="essay-item">
+                        <h3>To be Woman and Hip in Dunya</h3>
+                        <p class="essay-quote">"To be hip in this dunya is to navigate the dissonance between the avant-garde and the ancestral."</p>
+                    </a>
+                    <a href="https://medium.com/@zulfiqarmannan/shah-jahan-e-lahore-%D8%B4%D8%A7%DB%81-%D8%AC%DB%81%D8%A7%D9%86%D9%90-%D9%84%D8%A7%DB%81%D9%88%D8%B1-590c1f71813b" target="_blank" class="essay-item">
+                        <h3>Shah Jahan e Lahore</h3>
+                        <p class="essay-quote">"In the decay of Lahore, we find the palaces made of memories that the city forgot to demolish."</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="music">
+            <h2>the sound</h2>
+            
+            <div class="music-item">
+                <span class="music-title">Latest Release</span>
+                <div class="spotify-container">
+                    <iframe src="https://open.spotify.com/embed/album/29wiihYUVa2L0EmS78KnRb" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                </div>
+            </div>
+
+            <div class="music-item">
+                <span class="music-title">Raah-e-Ishq, 2024 – produced by Jahanzaib Aslam</span>
+                <div class="spotify-container">
+                    <iframe src="https://open.spotify.com/embed/album/1CZAWVwEiTPAGndO9ymMx6" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                </div>
+            </div>
+
+            <div class="music-item">
+                <span class="music-title">Ye Duniya Ek Boys' Club Hai, 2020 (Piano Demos)</span>
+                <div class="spotify-container">
+                    <iframe src="https://open.spotify.com/embed/album/7i9DPE1fTrfKuPrXaWJhCB" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                </div>
+            </div>
+
+            <div class="music-item">
+                <span class="music-title">Alter/Native, 2019 – produced by Andrew Evren</span>
+                <div class="spotify-container">
+                    <iframe src="https://open.spotify.com/embed/album/2Cn5uX3HQlIwwS73WtkvXN" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="spaces">
+            <h2>spaces</h2>
+            <div class="projects">
+                <a href="http://kitabghar.co" target="_blank" class="project-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZqooNf6c5wC3hdLb7VbsunbADWvCunrLk--URdiciKQ&s=10" alt="Kitab Ghar Library" class="project-img">
+                    <div class="project-content">
+                        <h3>Kitab Ghar</h3>
+                        <p style="font-size: 0.75rem; letter-spacing: 2px; color: var(--accent-color); text-transform: uppercase; margin-bottom: 1rem;">Lahore + Karachi</p>
+                        <p>A public library movement fostering the un-colonized mind.</p>
+                    </div>
+                </a>
+                <div class="project-box coming-soon">
+                    <p>Coming soon</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 ZARA SUHAIL MANNAN. <br> BUILT FROM GULISTAN.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
