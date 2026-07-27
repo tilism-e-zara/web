@@ -30,75 +30,136 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-        /* Navigation - Fixed crowding on Mobile */
+        /* Navigation */
         nav {
             position: absolute;
             top: 0; left: 0; width: 100%;
-            padding: 1.5rem 1rem;
+            padding: 1.5rem 2rem;
             display: flex; justify-content: space-between; align-items: center;
-            z-index: 10;
+            z-index: 100;
         }
 
         .brand-name { font-weight: 600; letter-spacing: 2px; font-size: 0.7rem; color: #fff; }
-        .nav-links { display: flex; align-items: center; gap: 1rem; }
+        .nav-links { display: flex; align-items: center; gap: 1.5rem; }
         nav a { color: #fff; text-decoration: none; font-size: 0.7rem; letter-spacing: 1px; font-weight: 600; transition: 0.3s; }
         nav a:hover { color: var(--accent-color); }
-        .social-icons { display: flex; gap: 0.8rem; margin-left: 0.5rem; font-size: 1rem; }
+        .social-icons { display: flex; gap: 1rem; margin-left: 0.5rem; font-size: 1.1rem; }
 
         /* Hero Section */
         header {
             position: relative;
             height: 100vh;
             display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(13,13,13,1)), url('Cover%20Art.jpg');
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(13,13,13,1)), url('Cover%20Art.jpg');
             background-size: cover; background-position: center;
-            padding: 0 1rem;
+            padding: 0 1.5rem;
         }
 
-        header h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); color: #fff; letter-spacing: -1px; line-height: 1.2; width: 100%; }
+        .hero-text-wrap { position: relative; margin-top: -50px; }
+
+        header h1 { 
+            font-size: clamp(3rem, 8vw, 4.8rem); 
+            color: #fff; 
+            letter-spacing: -1px; 
+            line-height: 0.8; 
+            position: relative;
+            z-index: 2;
+        }
+
         .urdu-accent { 
             font-family: 'Noto Nastaliq Urdu', serif; 
             color: var(--accent-color); 
-            font-size: clamp(3rem, 10vw, 6rem); /* MADE BIGGER */
-            margin-left: 10px;
+            font-size: clamp(4rem, 12vw, 8.5rem); 
+            display: block;
+            margin-top: -0.2em; /* This creates that sexy intersection with 'Welcome to' */
+            margin-bottom: 0.2em; /* This pushes the caption away */
+            z-index: 1;
             font-style: normal;
-            display: block; /* Forced to new line for impact on small screens if needed */
         }
 
-        header p { font-size: clamp(1rem, 4vw, 1.3rem); color: #ccc; max-width: 750px; margin: 2rem auto 0; font-family: 'Cormorant Garamond', serif; font-style: italic; }
+        header p { 
+            font-size: clamp(1rem, 4vw, 1.25rem); 
+            color: #ccc; 
+            max-width: 700px; 
+            margin: 0 auto; 
+            font-family: 'Cormorant Garamond', serif; 
+            font-style: italic;
+            position: relative;
+            z-index: 3;
+            line-height: 1.4;
+        }
+
         header p a { color: var(--accent-color); text-decoration: none; border-bottom: 1px solid var(--accent-color); }
 
-        /* NEWS CAROUSEL */
-        .news-carousel {
+        /* NEWS CAROUSEL REDESIGN */
+        .news-wrapper {
             position: absolute;
-            bottom: 4rem;
+            bottom: 3rem;
             width: 90%;
-            max-width: 600px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: 4px;
+            max-width: 550px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 10;
+        }
+
+        .carousel-btn {
+            background: none;
+            border: none;
+            color: var(--accent-color);
+            cursor: pointer;
+            font-size: 1.2rem;
+            opacity: 0.5;
+            transition: 0.3s;
+        }
+        .carousel-btn:hover { opacity: 1; transform: scale(1.1); }
+
+        .news-carousel {
+            flex-grow: 1;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 1.2rem;
+            border-radius: 8px;
             overflow: hidden;
             text-align: left;
         }
 
-        .news-label { font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-color); margin-bottom: 0.5rem; display: block; }
+        .news-label { font-size: 0.55rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-color); margin-bottom: 0.8rem; display: block; font-weight: 600; }
         
-        .news-track {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
+        .news-track { display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
 
         .news-item {
             min-width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .news-thumb {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            background: #1a1a1a;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .news-thumb img { width: 18px; height: 18px; filter: grayscale(1); }
+
+        .news-content {
             font-size: 0.85rem;
             font-style: italic;
             color: #ddd;
             font-family: 'Cormorant Garamond', serif;
+            line-height: 1.3;
         }
 
-        .news-source { display: block; font-size: 0.65rem; color: var(--dim-text); margin-top: 5px; text-transform: uppercase; letter-spacing: 1px;}
+        .news-source { display: block; font-size: 0.6rem; color: var(--accent-color); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; font-style: normal; opacity: 0.8; }
 
         /* Split Section Layout */
         .split-grid {
@@ -109,180 +170,13 @@
             border-bottom: 1px solid #1a1a1a;
         }
 
-        h2 { font-size: 3rem; margin-bottom: 3rem; color: var(--accent-color); text-transform: lowercase; }
+        h2 { font-size: 3rem; margin-bottom: 3.5rem; color: var(--accent-color); text-transform: lowercase; }
 
-        /* Left Side: Writing */
-        .essay-item { text-decoration: none; display: block; color: inherit; margin-bottom: 4rem; }
-        .essay-item h3 { font-size: 2.2rem; margin-bottom: 1rem; color: #fff; line-height: 1.1; }
+        .essay-item { text-decoration: none; display: block; color: inherit; margin-bottom: 4.5rem; }
+        .essay-item h3 { font-size: 2.2rem; margin-bottom: 1.2rem; color: #fff; line-height: 1.1; }
         .essay-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--dim-text); padding-left: 1.5rem; border-left: 1px solid var(--accent-color); }
         .essay-item:hover h3 { color: var(--accent-color); }
 
-        /* Right Side: Sounds */
         .music-item { margin-bottom: 3rem; }
         .music-title { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-color); margin-bottom: 0.8rem; display: block; }
-        .spotify-container { width: 100%; border-radius: 8px; overflow: hidden; background: #000; }
-
-        /* Spaces Section */
-        section.spaces-section { padding: 8rem 0; border-bottom: 1px solid #1a1a1a; }
-        .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-        .project-box {
-            border: 1px solid #222; overflow: hidden; text-decoration: none; color: inherit;
-            display: flex; flex-direction: column; transition: 0.4s; background: #000;
-        }
-        .project-box:hover { border-color: var(--accent-color); }
-        .project-img { width: 100%; height: 350px; object-fit: cover; filter: grayscale(100%); transition: 0.8s ease; opacity: 0.8; }
-        .project-box:hover .project-img { filter: grayscale(0%); opacity: 1; }
-        .project-content { padding: 2rem; }
-        .coming-soon { opacity: 0.3; display: flex; align-items: center; justify-content: center; font-style: italic; height: 350px; border: 1px dashed #333; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;}
-
-        footer { padding: 6rem 0; text-align: center; color: var(--dim-text); font-size: 0.8rem; letter-spacing: 2px; line-height: 2; }
-
-        /* Responsive stack for mobile */
-        @media (max-width: 900px) {
-            nav { padding: 1rem; }
-            .brand-name { display: none; } /* Hide on very small screens to save space */
-            .split-grid { grid-template-columns: 1fr; gap: 4rem; }
-            .projects { grid-template-columns: 1fr; }
-            .news-carousel { bottom: 2rem; width: 95%; }
-        }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <div class="brand-name">ZARA SUHAIL MANNAN</div>
-        <div class="nav-links">
-            <a href="#mountaintop">Writing</a>
-            <a href="#sounds">Sounds</a>
-            <a href="http://kitabghar.co" target="_blank">Kitab</a>
-            <div class="social-icons">
-                <a href="https://instagram.com/tilism.e.zara" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/zara-suhail-mannan-b7136a99/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
-    </nav>
-
-    <header>
-        <h1>Welcome to <span class="urdu-accent">طلسمِ زارا</span></h1>
-        <p>This is an archive of my work in music, writing, performance art and education. At my best, I am co-founder of the <a href="http://kitabghar.co" target="_blank">Kitab Ghar</a> public library movement.</p>
-        
-        <!-- FLOATING NEWS SECTION -->
-        <div class="news-carousel">
-            <span class="news-label">In the News</span>
-            <div class="news-track" id="newsTrack">
-                <div class="news-item">
-                    "Kitab Ghar Karachi rekindles fading library culture in Pakistan."
-                    <span class="news-source">— Arab News</span>
-                </div>
-                <div class="news-item">
-                    "Zara Suhail Mannan f.k.a. Zulfi is a writer and musician, as well as the founder of Kitab Ghar."
-                    <span class="news-source">— SAAG Anthology</span>
-                </div>
-                <div class="news-item">
-                    "Karachi's Kitab Ghar is saved after citizens donate to the free public library."
-                    <span class="news-source">— DAWN Images</span>
-                </div>
-                <div class="news-item">
-                    "Zara set the record straight about what it means to be a Pakistani."
-                    <span class="news-source">— Her Kajal Won't Smudge</span>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        
-        <div class="split-grid">
-            <!-- LEFT COLUMN: WRITING -->
-            <div id="mountaintop">
-                <h2>from the mountaintop</h2>
-                
-                <a href="https://medium.com/@zulfiqarmannan/transitioning-in-pakistan-1b83d2461086" target="_blank" class="essay-item">
-                    <h3>Transitioning in Pakistan</h3>
-                    <p class="essay-quote">"We are moorats; we have enjoined God as subordinates in the act of creation. We imperfectly attempt to mould our bodies into the shape of our soul..."</p>
-                </a>
-                
-                <a href="https://www.thealephreview.com/post/a-treatise-on-colonialism" target="_blank" class="essay-item">
-                    <h3>A Treatise on Colonialism</h3>
-                    <p class="essay-quote">"I proclaim a treatise on colonialism: (1) First, you dive headfirst into the mirage for foolishness is holy, (2) Taste it all, and then tell the whole truth still..."</p>
-                </a>
-
-                <a href="https://www.saaganthology.com/columns/to-be-woman-and-hip-in-dunya" target="_blank" class="essay-item">
-                    <h3>To be Woman and Hip in Dunya</h3>
-                    <p class="essay-quote">"To be woman and hip: Is to be okay not being woman at all, to be unafraid of androgyny / Allow yourself all the ugly of humanity / I am maila like my city."</p>
-                </a>
-
-                <a href="https://medium.com/@zulfiqarmannan/shah-jahan-e-lahore-%D8%B4%D8%A7%DB%81-%D8%AC%DB%81%D8%A7%D9%86%D9%90-%D9%84%D8%A7%DB%81%D9%88%D8%B1-590c1f71813b" target="_blank" class="essay-item">
-                    <h3>Shah Jahan e Lahore</h3>
-                    <p class="essay-quote">"آہ کو چاہیے ایک عمر اثر ہوتے تک... an elegy for a father and a city."</p>
-                </a>
-            </div>
-
-            <!-- RIGHT COLUMN: SOUNDS -->
-            <div id="sounds">
-                <h2>sounds</h2>
-                
-                <div class="music-item">
-                    <span class="music-title">Latest Release</span>
-                    <div class="spotify-container">
-                        <iframe src="https://open.spotify.com/embed/album/29wiihYUVa2L0EmS78KnRb" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                    </div>
-                </div>
-
-                <div class="music-item">
-                    <span class="music-title">Raah-e-Ishq, 2024</span>
-                    <div class="spotify-container">
-                        <iframe src="https://open.spotify.com/embed/album/1CZAWVwEiTPAGndO9ymMx6" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                    </div>
-                </div>
-
-                <div class="music-item">
-                    <span class="music-title">Ye Duniya Ek Boys' Club Hai, 2020</span>
-                    <div class="spotify-container">
-                        <iframe src="https://open.spotify.com/embed/album/7i9DPE1fTrfKuPrXaWJhCB" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                    </div>
-                </div>
-
-                <div class="music-item">
-                    <span class="music-title">Alter/Native, 2019</span>
-                    <div class="spotify-container">
-                        <iframe src="https://open.spotify.com/embed/album/2Cn5uX3HQlIwwS73WtkvXN" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <section class="spaces-section" id="spaces">
-            <h2>spaces</h2>
-            <div class="projects">
-                <a href="http://kitabghar.co" target="_blank" class="project-box">
-                    <img src="KG%20Lahore.jpeg" alt="Kitab Ghar Lahore" class="project-img">
-                    <div class="project-content">
-                        <h3>Kitab Ghar</h3>
-                        <p style="font-size: 0.75rem; letter-spacing: 2px; color: var(--accent-color); text-transform: uppercase; margin-bottom: 1rem;">Lahore + Karachi</p>
-                        <p>A public library movement fostering the un-colonized mind.</p>
-                    </div>
-                </a>
-                <div class="project-box coming-soon">
-                    <p>Coming soon</p>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2026 ZARA SUHAIL MANNAN. <br> BUILT FROM GULISTAN.</p>
-        </footer>
-    </div>
-
-    <!-- SCRIPT FOR CAROUSEL -->
-    <script>
-        const track = document.getElementById('newsTrack');
-        let index = 0;
-        setInterval(() => {
-            index = (index + 1) % 4;
-            track.style.transform = `translateX(-${index * 100}%)`;
-        }, 4000);
-    </script>
-
-</body>
-</html>
+        .spotify-container { width: 100%; border-radius: 8px; ove
