@@ -30,19 +30,20 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-        /* Navigation */
+        /* Navigation - Fixed crowding on Mobile */
         nav {
             position: absolute;
             top: 0; left: 0; width: 100%;
-            padding: 2.5rem 2rem;
+            padding: 1.5rem 1rem;
             display: flex; justify-content: space-between; align-items: center;
             z-index: 10;
         }
 
-        .nav-links { display: flex; align-items: center; gap: 2rem; }
-        nav a { color: #fff; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; font-weight: 600; transition: 0.3s; }
+        .brand-name { font-weight: 600; letter-spacing: 2px; font-size: 0.7rem; color: #fff; }
+        .nav-links { display: flex; align-items: center; gap: 1rem; }
+        nav a { color: #fff; text-decoration: none; font-size: 0.7rem; letter-spacing: 1px; font-weight: 600; transition: 0.3s; }
         nav a:hover { color: var(--accent-color); }
-        .social-icons { display: flex; gap: 1.2rem; margin-left: 1rem; font-size: 1.1rem; }
+        .social-icons { display: flex; gap: 0.8rem; margin-left: 0.5rem; font-size: 1rem; }
 
         /* Hero Section */
         header {
@@ -51,25 +52,58 @@
             display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
             background: linear-gradient(rgba(0,0,0,0.6), rgba(13,13,13,1)), url('Cover%20Art.jpg');
             background-size: cover; background-position: center;
-            margin-bottom: 2rem;
+            padding: 0 1rem;
         }
 
-        header h1 { font-size: 4.5rem; color: #fff; letter-spacing: -1px; line-height: 1.2; }
+        header h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); color: #fff; letter-spacing: -1px; line-height: 1.2; width: 100%; }
         .urdu-accent { 
             font-family: 'Noto Nastaliq Urdu', serif; 
             color: var(--accent-color); 
-            font-size: 2.8rem;
-            margin-left: 15px;
+            font-size: clamp(3rem, 10vw, 6rem); /* MADE BIGGER */
+            margin-left: 10px;
             font-style: normal;
+            display: block; /* Forced to new line for impact on small screens if needed */
         }
 
-        header p { font-size: 1.3rem; color: #ccc; max-width: 750px; margin: 2rem auto 0; font-family: 'Cormorant Garamond', serif; font-style: italic; }
+        header p { font-size: clamp(1rem, 4vw, 1.3rem); color: #ccc; max-width: 750px; margin: 2rem auto 0; font-family: 'Cormorant Garamond', serif; font-style: italic; }
         header p a { color: var(--accent-color); text-decoration: none; border-bottom: 1px solid var(--accent-color); }
+
+        /* NEWS CAROUSEL */
+        .news-carousel {
+            position: absolute;
+            bottom: 4rem;
+            width: 90%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 4px;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .news-label { font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-color); margin-bottom: 0.5rem; display: block; }
+        
+        .news-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .news-item {
+            min-width: 100%;
+            font-size: 0.85rem;
+            font-style: italic;
+            color: #ddd;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .news-source { display: block; font-size: 0.65rem; color: var(--dim-text); margin-top: 5px; text-transform: uppercase; letter-spacing: 1px;}
 
         /* Split Section Layout */
         .split-grid {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr; /* Writing side slightly wider */
+            grid-template-columns: 1.2fr 0.8fr;
             gap: 5rem;
             padding: 6rem 0;
             border-bottom: 1px solid #1a1a1a;
@@ -79,7 +113,7 @@
 
         /* Left Side: Writing */
         .essay-item { text-decoration: none; display: block; color: inherit; margin-bottom: 4rem; }
-        .essay-item h3 { font-size: 2rem; margin-bottom: 1rem; color: #fff; line-height: 1.1; }
+        .essay-item h3 { font-size: 2.2rem; margin-bottom: 1rem; color: #fff; line-height: 1.1; }
         .essay-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--dim-text); padding-left: 1.5rem; border-left: 1px solid var(--accent-color); }
         .essay-item:hover h3 { color: var(--accent-color); }
 
@@ -105,21 +139,22 @@
 
         /* Responsive stack for mobile */
         @media (max-width: 900px) {
-            header h1 { font-size: 3rem; }
-            .urdu-accent { font-size: 2rem; }
+            nav { padding: 1rem; }
+            .brand-name { display: none; } /* Hide on very small screens to save space */
             .split-grid { grid-template-columns: 1fr; gap: 4rem; }
             .projects { grid-template-columns: 1fr; }
+            .news-carousel { bottom: 2rem; width: 95%; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div style="font-weight: 600; letter-spacing: 3px; font-size: 0.8rem; color: #fff;">ZARA SUHAIL MANNAN</div>
+        <div class="brand-name">ZARA SUHAIL MANNAN</div>
         <div class="nav-links">
             <a href="#mountaintop">Writing</a>
             <a href="#sounds">Sounds</a>
-            <a href="http://kitabghar.co" target="_blank">Kitab Ghar</a>
+            <a href="http://kitabghar.co" target="_blank">Kitab</a>
             <div class="social-icons">
                 <a href="https://instagram.com/tilism.e.zara" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.linkedin.com/in/zara-suhail-mannan-b7136a99/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -129,7 +164,30 @@
 
     <header>
         <h1>Welcome to <span class="urdu-accent">طلسمِ زارا</span></h1>
-        <p>"This is an archive of my work in music, writing, performance art and education. At my best, I am co-founder of the <a href="http://kitabghar.co" target="_blank">Kitab Ghar</a> public library movement."</p>
+        <p>This is an archive of my work in music, writing, performance art and education. At my best, I am co-founder of the <a href="http://kitabghar.co" target="_blank">Kitab Ghar</a> public library movement.</p>
+        
+        <!-- FLOATING NEWS SECTION -->
+        <div class="news-carousel">
+            <span class="news-label">In the News</span>
+            <div class="news-track" id="newsTrack">
+                <div class="news-item">
+                    "Kitab Ghar Karachi rekindles fading library culture in Pakistan."
+                    <span class="news-source">— Arab News</span>
+                </div>
+                <div class="news-item">
+                    "Zara Suhail Mannan f.k.a. Zulfi is a writer and musician, as well as the founder of Kitab Ghar."
+                    <span class="news-source">— SAAG Anthology</span>
+                </div>
+                <div class="news-item">
+                    "Karachi's Kitab Ghar is saved after citizens donate to the free public library."
+                    <span class="news-source">— DAWN Images</span>
+                </div>
+                <div class="news-item">
+                    "Zara set the record straight about what it means to be a Pakistani."
+                    <span class="news-source">— Her Kajal Won't Smudge</span>
+                </div>
+            </div>
+        </div>
     </header>
 
     <div class="container">
@@ -215,6 +273,16 @@
             <p>&copy; 2026 ZARA SUHAIL MANNAN. <br> BUILT FROM GULISTAN.</p>
         </footer>
     </div>
+
+    <!-- SCRIPT FOR CAROUSEL -->
+    <script>
+        const track = document.getElementById('newsTrack');
+        let index = 0;
+        setInterval(() => {
+            index = (index + 1) % 4;
+            track.style.transform = `translateX(-${index * 100}%)`;
+        }, 4000);
+    </script>
 
 </body>
 </html>
