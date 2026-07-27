@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zara Suhail Mannan | Tilism</title>
+    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;600&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         :root {
-            --bg-color: #0a0a0a;
-            --text-color: #e0e0e0;
-            --accent-color: #ff00ff; /* Poison Magenta */
-            --secondary-accent: #00ff9d; /* Ghost Green */
-            --dim-text: #888;
+            --bg-color: #0d0d0d;
+            --text-color: #e8e8e8;
+            --accent-color: #d1a3ff; /* Pastel Lavender/Purple */
+            --secondary-accent: #b28dff; 
+            --dim-text: #a0a0a0;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,13 +27,13 @@
             overflow-x: hidden;
         }
 
-        /* Texture Overlay (Grain) */
+        /* Grain Texture */
         body::before {
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
-            opacity: 0.05;
+            opacity: 0.03;
             pointer-events: none;
             z-index: 9999;
         }
@@ -41,70 +44,74 @@
 
         /* Navigation */
         nav {
-            padding: 2rem 0;
+            padding: 2.5rem 0;
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            border-bottom: 1px solid #222;
+            align-items: center;
+            border-bottom: 1px solid #1a1a1a;
         }
 
-        nav a { color: var(--text-color); text-decoration: none; font-size: 0.9rem; margin-left: 2rem; transition: 0.3s; }
+        .nav-links { display: flex; align-items: center; gap: 2rem; }
+        nav a { color: var(--text-color); text-decoration: none; font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s; }
         nav a:hover { color: var(--accent-color); }
+        .social-icons { display: flex; gap: 1.2rem; margin-left: 1rem; font-size: 1.1rem; }
 
-        /* Hero Section */
+        /* Hero */
         header {
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            padding: 10rem 0 6rem 0;
             text-align: center;
         }
 
         .urdu-text {
             font-family: 'Noto Nastaliq Urdu', serif;
-            font-size: 2rem;
-            color: var(--dim-text);
-            margin-bottom: 1rem;
+            font-size: 2.2rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
         }
 
-        header h1 { font-size: 4.5rem; margin-bottom: 1rem; color: #fff; letter-spacing: -2px; }
-        header p { font-size: 1.2rem; color: var(--dim-text); max-width: 600px; margin: 0 auto; }
+        header h1 { font-size: 5rem; margin-bottom: 1.5rem; color: #fff; letter-spacing: -2px; line-height: 1; }
+        header p { font-size: 1.25rem; color: var(--dim-text); max-width: 700px; margin: 0 auto; font-family: 'Cormorant Garamond', serif; font-style: italic; }
+        header p a { color: var(--accent-color); text-decoration: none; border-bottom: 1px solid var(--accent-color); }
 
         /* Sections */
-        section { padding: 6rem 0; border-bottom: 1px solid #111; }
-        h2 { font-size: 3rem; margin-bottom: 3rem; color: var(--accent-color); text-transform: lowercase; }
+        section { padding: 8rem 0; border-bottom: 1px solid #111; }
+        h2 { font-size: 3.5rem; margin-bottom: 4rem; color: var(--accent-color); text-transform: lowercase; }
 
-        /* Essay List */
-        .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-        .essay-item { margin-bottom: 2.5rem; text-decoration: none; display: block; color: inherit; }
-        .essay-item h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
-        .essay-item:hover h3 { text-decoration: underline; color: var(--secondary-accent); }
-        .essay-meta { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--dim-text); }
+        /* Writing */
+        .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+        .essay-item { margin-bottom: 3rem; text-decoration: none; display: block; color: inherit; transition: 0.3s; }
+        .essay-item h3 { font-size: 2rem; margin-bottom: 0.8rem; line-height: 1.2; }
+        .essay-item:hover h3 { color: var(--accent-color); transform: translateX(10px); }
+        .essay-meta { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--dim-text); margin-bottom: 0.5rem; display: block; }
 
-        /* Music Player Placeholder */
-        .music-card {
-            background: #111;
-            padding: 2rem;
-            border-radius: 4px;
-            border-left: 4px solid var(--accent-color);
-            margin-bottom: 2rem;
-        }
+        /* Music Players */
+        .music-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        .spotify-container { width: 100%; border-radius: 12px; overflow: hidden; background: #000; }
 
-        /* Projects Section */
-        .projects { display: flex; gap: 2rem; }
+        /* Spaces */
+        .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
         .project-box {
-            flex: 1;
-            padding: 2rem;
-            border: 1px solid #333;
+            padding: 0;
+            border: 1px solid #222;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
             transition: 0.4s;
         }
-        .project-box:hover { background: #111; border-color: var(--accent-color); }
+        .project-box:hover { border-color: var(--accent-color); }
+        .project-img { width: 100%; height: 250px; background: #1a1a1a; object-fit: cover; filter: grayscale(100%) contrast(120%); transition: 0.5s; }
+        .project-box:hover .project-img { filter: grayscale(0%); }
+        .project-content { padding: 2rem; }
+        .coming-soon { opacity: 0.5; display: flex; align-items: center; justify-content: center; font-style: italic; color: var(--dim-text); border: 1px dashed #333; }
 
-        footer { padding: 4rem 0; text-align: center; color: var(--dim-text); font-size: 0.8rem; }
+        footer { padding: 6rem 0; text-align: center; color: var(--dim-text); font-size: 0.8rem; letter-spacing: 2px; }
 
         @media (max-width: 768px) {
-            header h1 { font-size: 3rem; }
-            .work-grid { grid-template-columns: 1fr; }
+            header h1 { font-size: 3.5rem; }
+            .work-grid, .projects { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -112,44 +119,47 @@
 
     <div class="container">
         <nav>
-            <div style="font-weight: 600; letter-spacing: 3px;">ZARA SUHAIL MANNAN</div>
-            <div>
+            <div style="font-weight: 600; letter-spacing: 3px; font-size: 0.8rem;">ZARA SUHAIL MANNAN</div>
+            <div class="nav-links">
                 <a href="#writing">Writing</a>
                 <a href="#music">Music</a>
-                <a href="#about">About</a>
-                <a href="https://instagram.com/tilism.e.zara" target="_blank">IG</a>
+                <a href="http://kitabghar.co" target="_blank">Kitab Ghar</a>
+                <div class="social-icons">
+                    <a href="https://instagram.com/tilism.e.zara" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/zara-suhail-mannan-b7136a99/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
             </div>
         </nav>
 
         <header>
             <div class="urdu-text">طلسمِ زارا</div>
-            <h1>The Enchantment</h1>
-            <p>A archive of music, essays, and the alchemy of change. From the glitter of Mystical Shayari to the silence of transition.</p>
+            <h1>Hi, my name is Zara.</h1>
+            <p>Welcome to my haus: this is an archive of my work in music, writing, performance art and education. At my best, I am co-founder of the <a href="http://kitabghar.co" target="_blank">Kitab Ghar</a> public library movement.</p>
         </header>
 
         <section id="writing">
-            <h2>The Dispatch</h2>
+            <h2>from the mountaintop</h2>
             <div class="work-grid">
                 <div>
-                    <a href="#" class="essay-item">
+                    <a href="https://medium.com/@zulfiqarmannan/transitioning-in-pakistan-1b83d2461086" target="_blank" class="essay-item">
                         <span class="essay-meta">Medium | Essay</span>
                         <h3>Transitioning in Pakistan</h3>
                         <p>On falling in love, the harmonium, and finding the women.</p>
                     </a>
-                    <a href="#" class="essay-item">
+                    <a href="https://www.thealephreview.com/post/a-treatise-on-colonialism" target="_blank" class="essay-item">
                         <span class="essay-meta">Aleph Review | Theory</span>
                         <h3>A Treatise on Colonialism</h3>
                         <p>Chartering a way through the dissonance of native vs. unnatural.</p>
                     </a>
                 </div>
                 <div>
-                    <a href="#" class="essay-item">
-                        <span class="essay-meta">SAAG Anthology | Writing</span>
+                    <a href="https://www.saaganthology.com/columns/to-be-woman-and-hip-in-dunya" target="_blank" class="essay-item">
+                        <span class="essay-meta">SAAG Anthology | Column</span>
                         <h3>To be Woman and Hip in Dunya</h3>
                         <p>Navigating the South Asian Avant-Garde.</p>
                     </a>
-                    <a href="#" class="essay-item">
-                        <span class="essay-meta">Personal Archive | Elegy</span>
+                    <a href="https://medium.com/@zulfiqarmannan/shah-jahan-e-lahore-%D8%B4%D8%A7%DB%81-%D8%AC%DB%81%D8%A7%D9%86%D9%90-%D9%84%D8%A7%DB%81%D9%88%D8%B1-590c1f71813b" target="_blank" class="essay-item">
+                        <span class="essay-meta">Medium | Elegy</span>
                         <h3>Shah Jahan e Lahore</h3>
                         <p>An elegy for a father and a city.</p>
                     </a>
@@ -158,43 +168,43 @@
         </section>
 
         <section id="music">
-            <h2>Soundscapes</h2>
-            <div class="music-card">
-                <h3>Mystical Shayari</h3>
-                <p class="essay-meta" style="margin-bottom: 1rem;">The Disco Rani Era</p>
-                <p>Glittery, sparkly pop-activism. "Ring Leader", "Disco Rani", and the Quaid-e-Azam shoot.</p>
-                <!-- Add Spotify Embed Here -->
-            </div>
-            <div class="music-card" style="border-left-color: var(--secondary-accent);">
-                <h3>Zulfi / Solo Works</h3>
-                <p class="essay-meta" style="margin-bottom: 1rem;">Indie-Pop & Melodrama</p>
-                <p>"Crown", "Fireworks", and the Yale basement tapes.</p>
+            <h2>the sound</h2>
+            <div class="music-grid">
+                <div class="spotify-container">
+                    <iframe src="https://open.spotify.com/embed/album/29wiihYUVa2L0EmS78KnRb" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                </div>
+                <div class="spotify-container">
+                    <iframe src="https://open.spotify.com/embed/album/1CZAWVwEiTPAGndO9ymMx6" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                </div>
+                <div class="spotify-container">
+                    <iframe src="https://open.spotify.com/embed/album/7i9DPE1fTrfKuPrXaWJhCB" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                </div>
+                <div class="spotify-container">
+                    <iframe src="https://open.spotify.com/embed/album/2Cn5uX3HQlIwwS73WtkvXN" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                </div>
             </div>
         </section>
 
         <section id="projects">
-            <h2>Spaces</h2>
+            <h2>spaces</h2>
             <div class="projects">
-                <div class="project-box">
-                    <h3>Kitab Ghar</h3>
-                    <p>A public library in Lahore/Karachi. A space for the un-colonized mind.</p>
+                <a href="http://kitabghar.co" target="_blank" class="project-box">
+                    <!-- Tip: Replace this URL with a real photo of the library later -->
+                    <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=1000" alt="Kitab Ghar" class="project-img">
+                    <div class="project-content">
+                        <h3>Kitab Ghar</h3>
+                        <span class="essay-meta">Lahore + Karachi</span>
+                        <p>A public library movement fostering the un-colonized mind.</p>
+                    </div>
+                </a>
+                <div class="project-box coming-soon">
+                    <h3>Coming soon</h3>
                 </div>
-                <div class="project-box">
-                    <h3>Studio Rub</h3>
-                    <p>Creative production and visual conspiracies.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="about">
-            <h2>The Metamorphosis</h2>
-            <div style="max-width: 700px; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;">
-                <p>INTRO TEXT HERE</p>
             </div>
         </section>
 
         <footer>
-            <p>&copy; 2024 Zara Suhail Mannan. Built for the Mystical Saazish.</p>
+            <p>&copy; 2026 ZARA SUHAIL MANNAN. <br> BUILT FROM GULISTAN.</p>
         </footer>
     </div>
 
