@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Zara Suhail Mannan | Lahore</title>
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;600&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
@@ -29,20 +29,20 @@
         h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-        /* Navigation - Fixed for Mobile */
+        /* Navigation - Fixed for Mobile Bleed */
         nav {
             position: absolute;
             top: 0; left: 0; width: 100%;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             display: flex; justify-content: space-between; align-items: center;
             z-index: 100;
         }
 
-        .brand-name { font-weight: 600; letter-spacing: 2px; font-size: 0.7rem; color: #fff; }
-        .nav-links { display: flex; align-items: center; gap: 1.2rem; }
+        .brand-name { font-weight: 600; letter-spacing: 2px; font-size: 0.7rem; color: #fff; text-transform: uppercase; }
+        .nav-links { display: flex; align-items: center; gap: 1.5rem; }
         nav a { color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 1px; font-weight: 600; transition: 0.3s; }
         nav a:hover { color: var(--accent-color); }
-        .social-icons { display: flex; gap: 0.8rem; font-size: 1rem; }
+        .social-icons { display: flex; gap: 1rem; font-size: 1.1rem; }
 
         /* Hero Section */
         header {
@@ -58,7 +58,7 @@
             font-size: clamp(3.5rem, 10vw, 5.5rem);
             color: #fff;
             letter-spacing: -1px;
-            line-height: 1;
+            line-height: 0.8;
             z-index: 2;
             position: relative;
         }
@@ -68,8 +68,8 @@
             color: var(--accent-color); 
             font-size: clamp(5rem, 15vw, 10rem); 
             display: block;
-            margin-top: -0.6em;
-            margin-bottom: 0.6em;
+            margin-top: -0.6em; /* Layering with 'Welcome to' */
+            margin-bottom: 1.2em; /* CRITICAL: Push bio down to avoid overlap */
             z-index: 1;
             font-style: normal;
         }
@@ -101,14 +101,13 @@
 
         .ticker-wrap {
             display: inline-block;
-            animation: ticker 40s linear infinite;
+            animation: ticker 45s linear infinite;
         }
 
         .ticker-item {
             display: inline-block;
             padding: 0 4rem;
             font-size: 0.75rem;
-            font-family: 'Inter', sans-serif;
             letter-spacing: 1px;
             color: var(--dim-text);
             text-transform: uppercase;
@@ -121,7 +120,7 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* Split Grid (Writing & Sounds) */
+        /* Split Sections */
         .split-grid {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
@@ -138,26 +137,21 @@
         .essay-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; color: var(--dim-text); padding-left: 1.5rem; border-left: 1px solid var(--accent-color); }
         .essay-item:hover h3 { color: var(--accent-color); }
 
-        .music-item { margin-bottom: 3rem; }
+        .music-item { margin-bottom: 2.5rem; }
         .music-title { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-color); margin-bottom: 0.8rem; display: block; }
         .spotify-container { width: 100%; border-radius: 8px; overflow: hidden; background: #000; }
 
-        /* VISIONS SECTION - TEXT BASED */
+        /* VISIONS */
         .purple-section { background-color: var(--accent-color); color: #0d0d0d; padding: 8rem 0; }
-        
         .visions-list { display: flex; flex-direction: column; gap: 2rem; }
         .vision-link {
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(2.5rem, 6vw, 4rem);
-            color: #000;
-            text-decoration: none;
-            line-height: 1;
-            transition: 0.4s;
-            font-style: italic;
+            color: #000; text-decoration: none; line-height: 1; transition: 0.4s; font-style: italic;
         }
         .vision-link:hover { padding-left: 20px; color: #fff; text-shadow: 2px 2px 0px #000; }
 
-        /* Projects Layout */
+        /* PROJECTS */
         .project-entry {
             display: grid;
             grid-template-columns: 0.8fr 1.2fr;
@@ -176,7 +170,7 @@
             text-decoration: none; font-weight: 600; letter-spacing: 2px; font-size: 0.8rem; text-transform: uppercase;
         }
 
-        /* Spaces */
+        /* SPACES */
         section.spaces-section { padding: 8rem 0; border-bottom: 1px solid #1a1a1a; }
         .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
         .project-box {
@@ -202,12 +196,12 @@
 
         /* MOBILE FIXES */
         @media (max-width: 600px) {
-            nav { padding: 1rem; }
-            .brand-name { display: none; } /* Prevents top bar clutter */
-            .nav-links { gap: 0.8rem; width: 100%; justify-content: space-between; }
+            nav { padding: 1.5rem 1rem; }
+            .brand-name { display: none; }
+            .nav-links { gap: 0.5rem; width: 100%; justify-content: space-between; }
             nav a { font-size: 0.65rem; }
-            .hero-main-title { font-size: 2.8rem; }
-            .urdu-accent { font-size: 4.5rem; }
+            .hero-main-title { font-size: 3rem; }
+            .urdu-accent { font-size: 5rem; margin-bottom: 2em; } /* Pushes bio very far on mobile */
             .split-grid, .project-entry, .project-entry.reverse { grid-template-columns: 1fr; gap: 3rem; }
             .projects-grid { grid-template-columns: 1fr; }
             .project-thumb { height: 300px; }
@@ -224,9 +218,7 @@
             <a href="#sounds">Sounds</a>
             <a href="#visions">Visions</a>
             <a href="#projects">Projects</a>
-            <div class="social-icons">
-                <a href="https://instagram.com/tilism.e.zara" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
+            <a href="https://instagram.com/tilism.e.zara" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
     </nav>
 
@@ -263,22 +255,34 @@
                     <p class="essay-quote">"Allow yourself all the ugly of humanity / I am maila like my city."</p>
                 </a>
             </div>
+            
             <div id="sounds">
                 <h2 class="dark-h2">sounds</h2>
-                <div class="music-item"><span class="music-title">Latest Release</span>
+                
+                <div class="music-item">
+                    <span class="music-title">Latest Release</span>
                     <div class="spotify-container"><iframe src="https://open.spotify.com/embed/album/29wiihYUVa2L0EmS78KnRb" width="100%" height="80" frameBorder="0"></iframe></div>
                 </div>
-                <div class="music-item"><span class="music-title">Raah-e-Ishq, 2024</span>
+                
+                <div class="music-item">
+                    <span class="music-title">Raah-e-Ishq, 2024</span>
                     <div class="spotify-container"><iframe src="https://open.spotify.com/embed/album/1CZAWVwEiTPAGndO9ymMx6" width="100%" height="80" frameBorder="0"></iframe></div>
                 </div>
-                <div class="music-item"><span class="music-title">Ye Duniya Ek Boys' Club Hai, 2020</span>
+
+                <div class="music-item">
+                    <span class="music-title">Alter/Native, 2019</span>
+                    <div class="spotify-container"><iframe src="https://open.spotify.com/embed/album/2Cn5uX3HQlIwwS73WtkvXN" width="100%" height="80" frameBorder="0"></iframe></div>
+                </div>
+                
+                <div class="music-item">
+                    <span class="music-title">Piano Demos, 2020</span>
                     <div class="spotify-container"><iframe src="https://open.spotify.com/embed/album/7i9DPE1fTrfKuPrXaWJhCB" width="100%" height="80" frameBorder="0"></iframe></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- VISIONS (TEXT-BASED GALLERY) -->
+    <!-- VISIONS -->
     <section class="purple-section" id="visions">
         <div class="container">
             <h2 class="light-h2">visions</h2>
