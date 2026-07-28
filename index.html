@@ -4,157 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Zara Suhail Mannan | Lahore</title>
-    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;600&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <style>
-        :root {
-            --bg-color: #0d0d0d;
-            --text-color: #e8e8e8;
-            --accent-color: #d1a3ff; /* Pastel Lavender */
-            --dim-text: #a0a0a0;
-        }
-
+        :root { --bg-color: #0d0d0d; --text-color: #e8e8e8; --accent-color: #d1a3ff; --dim-text: #a0a0a0; }
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
+        body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; }
         h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-        /* --- NAVIGATION --- */
-        .menu-toggle {
-            position: fixed;
-            top: 2rem;
-            right: 2rem;
-            z-index: 1000;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            padding: 10px;
-            background: rgba(13,13,13,0.5);
-            backdrop-filter: blur(5px);
-            border-radius: 4px;
-        }
-
+        /* Menu */
+        .menu-toggle { position: fixed; top: 2rem; right: 2rem; z-index: 1000; cursor: pointer; display: flex; flex-direction: column; gap: 6px; padding: 10px; background: rgba(13,13,13,0.5); backdrop-filter: blur(5px); border-radius: 4px; }
         .line { width: 30px; height: 2px; background: var(--accent-color); transition: 0.3s; }
-
-        #nav-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(13, 13, 13, 0.98);
-            z-index: 999;
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        #nav-overlay a {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            color: #fff;
-            text-decoration: none;
-            margin: 0.5rem 0;
-            transition: 0.3s;
-        }
-
-        #nav-overlay a:hover { color: var(--accent-color); font-style: italic; transform: scale(1.05); }
+        #nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(13, 13, 13, 0.98); z-index: 999; display: none; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        #nav-overlay a { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 8vw, 4rem); color: #fff; text-decoration: none; margin: 0.5rem 0; transition: 0.3s; }
+        #nav-overlay a:hover { color: var(--accent-color); font-style: italic; }
         .nav-socials { margin-top: 2rem; display: flex; gap: 2rem; font-size: 2rem; }
         .nav-socials a { color: var(--accent-color) !important; }
 
         /* Hero */
-        header {
-            position: relative;
-            height: 100vh;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(13,13,13,1)), url('Cover%20Art.jpg');
-            background-size: cover; background-position: center;
-            padding: 0 1.5rem;
-        }
-
+        header { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.6), rgba(13,13,13,1)), url('Cover%20Art.jpg'); background-size: cover; background-position: center; padding: 0 1.5rem; }
         .hero-main-title { font-size: clamp(3.5rem, 10vw, 5.5rem); color: #fff; letter-spacing: -1px; line-height: 0.8; z-index: 2; position: relative; }
         .urdu-accent { font-family: 'Noto Nastaliq Urdu', serif; color: var(--accent-color); font-size: clamp(5rem, 15vw, 10rem); display: block; margin-top: -0.6em; margin-bottom: 1.2em; z-index: 1; font-style: normal;}
         header p { font-size: clamp(1.1rem, 4vw, 1.3rem); color: #ccc; max-width: 750px; margin: 0 auto; font-family: 'Cormorant Garamond', serif; font-style: italic; z-index: 3; line-height: 1.5; }
         header p a { color: var(--accent-color); text-decoration: none; border-bottom: 1px solid var(--accent-color); }
 
-        /* Content Sections */
-        .split-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 5rem; padding: 8rem 0; }
-        h2 { font-size: 3.5rem; margin-bottom: 1rem; text-transform: lowercase; color: var(--accent-color); }
-        .section-caption { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--dim-text); margin-bottom: 3rem; display: block; font-size: 1.2rem; text-decoration: none;}
+        /* Writing & Music */
+        .split-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 5rem; padding: 8rem 0 4rem 0; }
+        h2 { font-size: 3rem; margin-bottom: 3rem; text-transform: lowercase; color: var(--accent-color); }
         .lang-switch { font-size: 0.4em; font-family: 'Inter', sans-serif; font-style: normal; vertical-align: middle; margin-left: 15px; letter-spacing: 1px; }
-        .lang-switch a { color: var(--accent-color); text-decoration: none; border-bottom: 1px solid transparent; }
-        .lang-switch a:hover { border-bottom: 1px solid var(--accent-color); }
-
+        .lang-switch a { color: var(--accent-color); text-decoration: none; }
         .essay-item { text-decoration: none; display: block; color: inherit; margin-bottom: 4rem; }
         .essay-item h3 { font-size: 2.1rem; margin-bottom: 1rem; color: #fff; line-height: 1.1; }
         .essay-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--dim-text); padding-left: 1.5rem; border-left: 1px solid var(--accent-color); }
-
         .music-item { margin-bottom: 2.5rem; }
         .music-title { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-color); margin-bottom: 0.8rem; display: block; }
+        .spotify-container { width: 100%; border-radius: 8px; overflow: hidden; background: #000; }
 
-        /* Visions */
-        #visions { padding: 8rem 0; border-top: 1px solid #1a1a1a; }
-        .visions-list { display: flex; flex-direction: column; gap: 1.5rem; }
-        .vision-link { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 6vw, 4rem); color: var(--accent-color); text-decoration: none; line-height: 1; transition: 0.4s; font-style: italic; }
-        .vision-link:hover { padding-left: 20px; color: #fff; }
+        /* Vision Footer Row */
+        .vision-footer { padding-bottom: 8rem; border-bottom: 1px solid #1a1a1a; display: flex; gap: 2rem; flex-wrap: wrap; }
+        .vision-mini-link { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--dim-text); text-decoration: none; font-size: 1.2rem; transition: 0.3s; }
+        .vision-mini-link:hover { color: var(--accent-color); }
 
-        /* --- CONTINUOUS PURPLE WRAPPER --- */
-        .purple-wrapper {
-            background: linear-gradient(rgba(209, 163, 255, 0.92), rgba(209, 163, 255, 0.92)), url('one.jpg');
-            background-size: cover; background-attachment: fixed; color: #0d0d0d;
-        }
+        /* Purple Wrapper */
+        .purple-wrapper { background: linear-gradient(rgba(209, 163, 255, 0.92), rgba(209, 163, 255, 0.92)), url('one.jpg'); background-size: cover; background-attachment: fixed; color: #0d0d0d; }
         .purple-section { padding: 8rem 0; border-bottom: 1px solid rgba(0,0,0,0.1); }
         .light-h2 { color: #000; border-bottom: 2px solid #000; display: inline-block; padding-bottom: 10px; margin-bottom: 1rem; }
+        .section-caption { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #222; margin-bottom: 3rem; display: block; font-size: 1.2rem; text-decoration: none;}
 
-        /* Work Section */
-        .dream-3-box { background: rgba(255,255,255,0.25); backdrop-filter: blur(10px); padding: 3rem; border-radius: 12px; border: 1px solid rgba(0,0,0,0.1); display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: center; }
-        .dream-img { width: 100%; border-radius: 4px; transition: 0.5s; }
-        .dream-img:hover { transform: scale(1.02); }
+        /* Dream 3 Box */
+        .dream-3-box { background: rgba(255,255,255,0.25); backdrop-filter: blur(10px); padding: 3rem; border-radius: 8px; border: 1px solid rgba(0,0,0,0.1); display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: center; }
+        .dream-img { width: 100%; border-radius: 4px; }
 
-        /* Press Section */
-        .press-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; }
-        .press-item { border-left: 2px solid #000; padding-left: 2rem; margin-bottom: 2rem; }
-        .press-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; line-height: 1.4; margin-bottom: 1rem; color: #000; display: block;}
-        .press-meta { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+        /* Projects Balanced */
+        .project-standard { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 2rem; }
+        .project-card { display: flex; flex-direction: column; }
+        .project-thumb-box { width: 100%; height: 350px; background: #000; overflow: hidden; margin-bottom: 1.5rem; }
+        .project-thumb-box img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; }
 
-        /* Footer */
-        .contact-section { padding: 10rem 0; text-align: center; }
-        .contact-link { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(2rem, 6vw, 3.5rem); color: var(--accent-color); text-decoration: none; border-bottom: 1px solid var(--accent-color); transition: 0.3s; }
-        .contact-link:hover { color: #fff; border-color: #fff; }
+        /* Spaces */
+        .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding-top: 4rem; }
+        .project-box { border: 1px solid #222; overflow: hidden; text-decoration: none; color: inherit; display: flex; flex-direction: column; background: #000; }
+        .project-img { width: 100%; height: 400px; object-fit: cover; filter: grayscale(100%); opacity: 0.8; transition: 0.5s; }
+        .project-box:hover .project-img { filter: grayscale(0%); opacity: 1; }
+
         footer { padding: 5rem 0; text-align: center; color: var(--dim-text); font-size: 0.8rem; letter-spacing: 2px; }
 
-        @media (max-width: 900px) {
-            .split-grid, .dream-3-box, .press-grid { grid-template-columns: 1fr; gap: 4rem; }
-            .hero-main-title { font-size: 3rem; }
-            .urdu-accent { margin-bottom: 2.5em; }
-        }
+        @media (max-width: 900px) { .split-grid, .dream-3-box, .project-standard, .projects-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
     <div class="menu-toggle" onclick="toggleMenu()">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+        <div class="line"></div><div class="line"></div><div class="line"></div>
     </div>
 
     <nav id="nav-overlay">
         <a href="#mountaintop" onclick="toggleMenu()">Writing</a>
         <a href="#music" onclick="toggleMenu()">Music</a>
-        <a href="#visions" onclick="toggleMenu()">Videos</a>
         <a href="#work" onclick="toggleMenu()">Work</a>
         <a href="#projects" onclick="toggleMenu()">Projects</a>
-        <a href="#featured" onclick="toggleMenu()">Featured In</a>
+        <a href="press.html" onclick="toggleMenu()">Featured In</a>
         <div class="nav-socials">
             <a href="https://instagram.com/tilism.e.zara" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.linkedin.com/in/zara-suhail-mannan-b7136a99/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -168,28 +98,25 @@
     </header>
 
     <div class="container">
-        <!-- WRITING & MUSIC -->
         <div class="split-grid" id="mountaintop">
             <div>
-                <h2>writing
+                <h2>from the mountaintop
                     <span class="lang-switch">
                         <a href="https://medium.com/@zulfiqarmannan" target="_blank">English</a> | 
                         <a href="https://intesabekhushbu.wordpress.com/" target="_blank">اردو</a>
                     </span>
                 </h2>
-                <span class="section-caption">from the mountaintop</span>
-                
                 <a href="https://medium.com/@zulfiqarmannan/teaching-for-pakistan-55ccfef209fc" target="_blank" class="essay-item">
                     <h3>Teaching for Pakistan</h3>
                     <p class="essay-quote">"And I tried my best: I taught 134 6th-graders General Science for a year at a public school on the near outskirts of Islamabad. Six mornings a week, I am up at 6AM and rushing to a school twenty minutes away."</p>
                 </a>
                 <a href="https://medium.com/@zulfiqarmannan/transitioning-in-pakistan-1b83d2461086" target="_blank" class="essay-item">
                     <h3>Transitioning in Pakistan</h3>
-                    <p class="essay-quote">"We are moorats; we have enjoined God as subordinates in the act of creation. We imperfectly attempt to mould our bodies into the shape of our soul..."</p>
+                    <p class="essay-quote">"We are moorats; we have enjoined God as subordinates in the act of creation..."</p>
                 </a>
                 <a href="https://www.thealephreview.com/post/a-treatise-on-colonialism" target="_blank" class="essay-item">
                     <h3>A Treatise on Colonialism</h3>
-                    <p class="essay-quote">"I proclaim a treatise on colonialism: (1) First, you dive headfirst into the mirage for foolishness is holy, (2) Taste it all, and then tell the whole truth still..."</p>
+                    <p class="essay-quote">"I proclaim a treatise on colonialism: (1) First, you dive headfirst into the mirage..."</p>
                 </a>
                 <a href="https://www.saaganthology.com/columns/to-be-woman-and-hip-in-dunya" target="_blank" class="essay-item">
                     <h3>To be Woman and Hip in Dunya</h3>
@@ -205,7 +132,6 @@
                 <a href="https://open.spotify.com/artist/6gw1Naa2mIA93vwkDgo0pp?si=dyKruSc2R2S8sdcloUdrSw" target="_blank" style="text-decoration:none; color:inherit;">
                     <h2>music</h2>
                 </a>
-                <span class="section-caption">sounds</span>
                 <div class="music-item"><span class="music-title">Latest Release</span>
                     <div class="spotify-container"><iframe src="https://open.spotify.com/embed/album/29wiihYUVa2L0EmS78KnRb" width="100%" height="80" frameBorder="0"></iframe></div>
                 </div>
@@ -221,134 +147,77 @@
             </div>
         </div>
 
-        <!-- VISIONS -->
-        <section id="visions">
-            <h2>visions</h2>
-            <span class="section-caption">Watch one of Zara's music videos.</span>
-            <div class="visions-list">
-                <a href="https://youtu.be/1v05iL0Q1-k" target="_blank" class="vision-link">Raah-e-Ishq (2025)</a>
-                <a href="https://youtu.be/i3o5rI_K-Fk" target="_blank" class="vision-link">Kya Karun (2024)</a>
-                <a href="https://youtu.be/S265P-N-P64" target="_blank" class="vision-link">Ascending (2021)</a>
-                <a href="https://youtu.be/jZ_y-uE93Y8" target="_blank" class="vision-link">Ye Duniya (2021)</a>
-            </div>
-        </section>
+        <div class="vision-footer">
+            <span style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-color); width: 100%;">Visions:</span>
+            <a href="https://youtu.be/1v05iL0Q1-k" target="_blank" class="vision-mini-link">Raah-e-Ishq (2025)</a>
+            <a href="https://youtu.be/i3o5rI_K-Fk" target="_blank" class="vision-mini-link">Kya Karun (2024)</a>
+            <a href="https://youtu.be/S265P-N-P64" target="_blank" class="vision-mini-link">Ascending (2021)</a>
+            <a href="https://youtu.be/jZ_y-uE93Y8" target="_blank" class="vision-mini-link">Ye Duniya (2021)</a>
+        </div>
     </div>
 
     <div class="purple-wrapper">
-        <!-- WORK -->
         <section class="purple-section" id="work">
             <div class="container">
                 <h2 class="light-h2">work</h2>
-                <div>
-                    <a href="https://www.linkedin.com/in/zara-suhail-mannan-b7136a99/" target="_blank" class="section-caption" style="color: #000; border-bottom: 1px solid rgba(0,0,0,0.3); display: inline-block;">
-                        Lead Counselor –&gt; Director, Karachi –&gt; Head of Writing
-                    </a>
-                </div>
-                
+                <a href="https://www.linkedin.com/in/zara-suhail-mannan-b7136a99/" target="_blank" class="section-caption">Lead Counselor –&gt; Director, Karachi –&gt; Head of Writing</a>
                 <div class="dream-3-box">
-                    <a href="https://www.instagram.com/p/DOL80h5iIM6/?hl=en" target="_blank">
-                        <img src="dream3pic.png" alt="Dream 3 Education" class="dream-img">
-                    </a>
-                    <div class="dream-content">
-                        <h3 style="font-size: 2.8rem; line-height: 1; margin-bottom: 1rem; color: #000;">Dream 3 Education</h3>
-                        <p style="font-family: 'Cormorant Garamond'; font-size: 1.4rem; font-style: italic; margin-bottom: 2rem; color: #111;">
-                            "Dream 3 is more than education; it's the reimagining of the South Asian student's potential in a global landscape."
-                        </p>
+                    <a href="https://www.instagram.com/p/DOL80h5iIM6/?hl=en" target="_blank"><img src="dream3pic.png" alt="Dream 3" class="dream-img"></a>
+                    <div>
+                        <h3>Dream 3 Education</h3>
+                        <p style="font-family: 'Cormorant Garamond'; font-size: 1.4rem; font-style: italic; margin-bottom: 2rem;">"Dream 3 is the reimagining of the South Asian student's potential in a global landscape."</p>
                         <div style="display: flex; gap: 1.5rem; font-size: 1.5rem; margin-bottom: 2rem;">
                             <a href="https://www.linkedin.com/company/dream-3/" target="_blank" style="color: #000;"><i class="fab fa-linkedin"></i></a>
                             <a href="https://www.instagram.com/dream3education/?hl=en" target="_blank" style="color: #000;"><i class="fab fa-instagram"></i></a>
                         </div>
-                        <a href="https://www.linkedin.com/company/dream-3/posts/?feedView=all" target="_blank" style="font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; color: #000; text-decoration: none; border-bottom: 2px solid #000;">
-                            Latest Dispatches —>
-                        </a>
+                        <a href="https://www.linkedin.com/company/dream-3/posts/?feedView=all" target="_blank" style="font-weight: 600; text-transform: uppercase; font-size: 0.75rem; color: #000; text-decoration: none; border-bottom: 2px solid #000;">Latest Dispatches —&gt;</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- PROJECTS -->
         <section class="purple-section" id="projects">
             <div class="container">
                 <h2 class="light-h2">projects</h2>
-                <div class="split-grid" style="padding: 0;">
-                    <div class="project-entry">
-                        <div class="project-thumb"><img src="Paradise%20Sought.jpg" alt="Paradise Sought" style="width:100%; height:100%; object-fit:cover;"></div>
-                        <div class="project-text">
-                            <h3 style="color:#000;">Paradise Sought</h3>
-                            <p style="font-style:italic; font-family:'Cormorant Garamond'; color:#111;">Exploring histories and stories of resistance to dissect visible logics of domination.</p>
-                            <a href="https://sites.google.com/view/paradisesought/home" target="_blank" style="color:#000; font-weight:600; text-decoration:none; border-bottom:1px solid #000;">Visit Archive</a>
-                        </div>
+                <div class="project-standard">
+                    <div class="project-card">
+                        <div class="project-thumb-box"><img src="Paradise%20Sought.jpg"></div>
+                        <h3>Paradise Sought</h3>
+                        <p style="font-family: 'Cormorant Garamond'; font-style: italic; margin-bottom: 1rem;">Exploring stories of resistance to dissect invisible logics of domination.</p>
+                        <a href="https://sites.google.com/view/paradisesought/home" target="_blank" style="color:#000; font-weight:600; text-decoration:none; border-bottom:1px solid #000; align-self: flex-start;">Archive</a>
                     </div>
-                    <div class="project-entry">
-                        <div class="project-thumb"><img src="Zine%20Shop.png" alt="Zine Shop" style="width:100%; height:100%; object-fit:cover;"></div>
-                        <div class="project-text">
-                            <h3 style="color:#000;">Kitab Ghar Publications</h3>
-                            <p style="font-style:italic; font-family:'Cormorant Garamond'; color:#111;">Editor: Baloch Women's March Special Edition. Co-Author: Women In Thought.</p>
-                            <a href="https://kitabghar.co/shop" target="_blank" style="color:#000; font-weight:600; text-decoration:none; border-bottom:1px solid #000;">Shop Publications</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FEATURED IN -->
-        <section class="purple-section" id="featured">
-            <div class="container">
-                <h2 class="light-h2">featured in</h2>
-                <div class="press-grid">
-                    <div class="press-item">
-                        <span class="press-quote">"Kitab Ghar Karachi rekindles fading library culture in Pakistan through citizen donations."</span>
-                        <span class="press-meta">Arab News | Feb 2024</span>
-                    </div>
-                    <div class="press-item">
-                        <span class="press-quote">"Zara set the record straight about what it means to be a Pakistani woman and artist."</span>
-                        <span class="press-meta">Her Kajal Won't Smudge | 2022</span>
-                    </div>
-                    <div class="press-item">
-                        <span class="press-quote">"Karachi's Kitab Ghar is saved after citizens donate to the free public library movement."</span>
-                        <span class="press-meta">DAWN Images | Nov 2023</span>
-                    </div>
-                    <div class="press-item">
-                        <span class="press-quote">"Zara Suhail Mannan f.k.a. Zulfi is a writer and musician, as well as the founder of Kitab Ghar."</span>
-                        <span class="press-meta">SAAG Anthology | 2021</span>
+                    <div class="project-card">
+                        <div class="project-thumb-box"><img src="Zine%20Shop.png"></div>
+                        <h3>Kitab Ghar Publications</h3>
+                        <p style="font-family: 'Cormorant Garamond'; font-style: italic; margin-bottom: 1rem;">Editor: Baloch Women's March Special Edition. Co-Author: Women In Thought.</p>
+                        <a href="https://kitabghar.co/shop" target="_blank" style="color:#000; font-weight:600; text-decoration:none; border-bottom:1px solid #000; align-self: flex-start;">Shop</a>
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- SPACES -->
     <div class="container">
         <section class="purple-section" style="background:none; border:none;" id="spaces">
             <h2>spaces</h2>
             <div class="projects-grid">
                 <a href="http://kitabghar.co" target="_blank" class="project-box">
-                    <img src="KG%20Lahore.jpeg" alt="Kitab Ghar Lahore" class="project-img">
-                    <div style="padding:2rem;">
-                        <h3 style="color:#fff;">Kitab Ghar</h3>
-                        <p style="font-size: 0.75rem; letter-spacing: 2px; color: var(--accent-color); text-transform: uppercase;">Lahore + Karachi</p>
-                    </div>
+                    <img src="KG%20Lahore.jpeg" alt="Kitab Ghar" class="project-img">
+                    <div style="padding:2rem;"><h3>Kitab Ghar</h3><p style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-color);">Lahore + Karachi</p></div>
                 </a>
-                <div class="project-box" style="opacity: 0.2; justify-content:center; align-items:center; border-style: dashed;">
+                <div class="project-box" style="opacity: 0.2; justify-content:center; align-items:center; border: 1px dashed #333;">
                     <p style="font-family: 'Cormorant Garamond'; font-size: 1.5rem; font-style: italic;">Coming soon</p>
                 </div>
             </div>
         </section>
-
-        <section class="contact-section">
-            <a href="mailto:zulfism@gmail.com" class="contact-link">Get in touch to scheme together</a>
+        <section style="padding: 10rem 0; text-align: center;">
+            <a href="mailto:zulfism@gmail.com" style="font-family: 'Cormorant Garamond'; font-size: clamp(2rem, 5vw, 3rem); color: var(--accent-color); text-decoration: none; border-bottom: 1px solid var(--accent-color);">Get in touch to scheme together</a>
         </section>
-
-        <footer>
-            <p>&copy; 2026 ZARA SUHAIL MANNAN. <br> BUILT FROM GULISTAN.</p>
-        </footer>
+        <footer><p>&copy; 2026 ZARA SUHAIL MANNAN. <br> BUILT FROM GULISTAN.</p></footer>
     </div>
 
     <script>
-        function toggleMenu() {
-            const overlay = document.getElementById('nav-overlay');
-            overlay.style.display = (overlay.style.display === 'flex') ? 'none' : 'flex';
-        }
+        function toggleMenu() { const overlay = document.getElementById('nav-overlay'); overlay.style.display = (overlay.style.display === 'flex') ? 'none' : 'flex'; }
     </script>
 </body>
 </html>
