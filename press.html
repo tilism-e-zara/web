@@ -7,103 +7,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --bg-color: #0d0d0d;
-            --text-color: #e8e8e8;
-            --accent-color: #d1a3ff;
-            --dim-text: #888;
-        }
-
+        :root { --bg-color: #0d0d0d; --text-color: #e8e8e8; --accent-color: #d1a3ff; --dim-text: #888; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Inter', sans-serif; line-height: 1.6; }
-        
         .container { max-width: 900px; margin: 0 auto; padding: 5rem 2rem; }
-
-        .back-link { 
-            color: var(--accent-color); 
-            text-decoration: none; 
-            font-size: 0.75rem; 
-            letter-spacing: 2px; 
-            text-transform: uppercase; 
-            margin-bottom: 4rem; 
-            display: inline-block;
-            transition: 0.3s;
-        }
-        .back-link:hover { opacity: 0.6; padding-left: 5px; }
-
-        h1 { 
-            font-family: 'Cormorant Garamond', serif; 
-            font-size: clamp(3rem, 8vw, 5rem); 
-            color: var(--accent-color); 
-            margin-bottom: 5rem; 
-            font-style: italic;
-            font-weight: 400;
-        }
-
+        .back-link { color: var(--accent-color); text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4rem; display: inline-block; transition: 0.3s; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 8vw, 5rem); color: var(--accent-color); margin-bottom: 5rem; font-style: italic; font-weight: 400; }
         .press-list { display: flex; flex-direction: column; gap: 4rem; }
-
-        .press-item {
-            display: grid;
-            grid-template-columns: 80px 1fr;
-            gap: 2rem;
-            text-decoration: none;
-            color: inherit;
-            border-bottom: 1px solid #1a1a1a;
-            padding-bottom: 4rem;
-            transition: 0.3s;
-        }
-        .press-item:hover { border-color: var(--accent-color); }
-
-        .press-thumb {
-            width: 80px;
-            height: 80px;
-            background: #111;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border: 1px solid #222;
-        }
+        .press-item { display: grid; grid-template-columns: 80px 1fr; gap: 2rem; text-decoration: none; color: inherit; border-bottom: 1px solid #1a1a1a; padding-bottom: 4rem; transition: 0.3s; }
+        .press-thumb { width: 80px; height: 80px; background: #111; border-radius: 4px; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid #222; }
         .press-thumb img { width: 40px; height: 40px; filter: grayscale(1); opacity: 0.7; }
-
-        .press-content h3 { 
-            font-family: 'Cormorant Garamond', serif; 
-            font-size: 1.8rem; 
-            line-height: 1.2; 
-            margin-bottom: 1rem; 
-            font-style: italic;
-            color: #fff;
-        }
-
-        .press-quote {
-            font-size: 1.1rem;
-            color: var(--dim-text);
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        .press-meta {
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent-color);
-        }
-
-        @media (max-width: 600px) {
-            .press-item { grid-template-columns: 1fr; gap: 1rem; }
-            .press-thumb { width: 50px; height: 50px; }
-        }
+        .press-content h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; line-height: 1.2; margin-bottom: 1rem; font-style: italic; color: #fff; }
+        .press-quote { font-size: 1.1rem; color: var(--dim-text); margin-bottom: 1.5rem; display: block; }
+        .press-meta { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-color); }
+        @media (max-width: 600px) { .press-item { grid-template-columns: 1fr; gap: 1rem; } .press-thumb { width: 50px; height: 50px; } }
     </style>
 </head>
 <body>
-
     <div class="container">
         <a href="index.html" class="back-link">← Back to Archive</a>
         <h1>featured in</h1>
-
         <div class="press-list">
+
+            <!-- 2024: DAWN Images - Community -->
+            <a href="https://images.dawn.com/news/1192869/kitab-ghar-karachi-is-a-library-beyond-books-fostering-community-and-culture" target="_blank" class="press-item">
+                <div class="press-thumb"><img src="https://www.google.com/s2/favicons?domain=dawn.com&sz=128"></div>
+                <div class="press-content">
+                    <h3>Kitab Ghar Karachi is a library beyond books</h3>
+                    <span class="press-quote">"A library beyond books, fostering community and culture. It is a dream that Zara Suhail Mannan has worked hard to keep alive."</span>
+                    <span class="press-meta">DAWN Images | March 2024</span>
+                </div>
+            </a>
+
+            <!-- 2024: DAWN Images - Saved -->
+            <a href="https://images.dawn.com/news/1195233/karachis-kitab-ghar-is-saved-after-citizens-donate-to-the-free-public-library" target="_blank" class="press-item">
+                <div class="press-thumb"><img src="https://www.google.com/s2/favicons?domain=dawn.com&sz=128"></div>
+                <div class="press-content">
+                    <h3>Karachi’s Kitab Ghar is saved after citizens donate</h3>
+                    <span class="press-quote">"The community response ensures the continuation of a vital public resource and literary sanctuary."</span>
+                    <span class="press-meta">DAWN Images | Feb 2024</span>
+                </div>
+            </a>
 
             <!-- 2024: Arab News -->
             <a href="https://www.arabnews.pk/node/2457816/pakistan" target="_blank" class="press-item">
@@ -115,32 +59,32 @@
                 </div>
             </a>
 
-            <!-- 2023: DAWN -->
+            <!-- 2023: DAWN Images Archive -->
             <a href="https://images.dawn.com/news/1192135" target="_blank" class="press-item">
                 <div class="press-thumb"><img src="https://www.google.com/s2/favicons?domain=dawn.com&sz=128"></div>
                 <div class="press-content">
-                    <h3>Karachi’s Kitab Ghar is saved after citizens donate</h3>
-                    <span class="press-quote">"The community response ensures the continuation of a vital public resource and literary sanctuary."</span>
+                    <h3>Kitab Ghar is saved after citizens donate</h3>
+                    <span class="press-quote">"Donations from citizens across Pakistan helped keep the library's doors open during a critical time."</span>
                     <span class="press-meta">DAWN Images | Nov 2023</span>
                 </div>
             </a>
 
-            <!-- 2022: Her Kajal Won't Smudge -->
-            <div class="press-item">
-                <div class="press-thumb"><i class="fas fa-eye" style="font-size: 24px; color: #333;"></i></div>
+            <!-- 2022: DAWN - Bail -->
+            <a href="https://www.dawn.com/news/1705934" target="_blank" class="press-item">
+                <div class="press-thumb"><img src="https://www.google.com/s2/favicons?domain=dawn.com&sz=128"></div>
                 <div class="press-content">
-                    <h3>Zara Suhail Mannan set the record straight</h3>
-                    <span class="press-quote">"A conversation on identity, the city of Lahore, and the refusal to be categorized."</span>
-                    <span class="press-meta">Her Kajal Won't Smudge | 2022</span>
+                    <h3>Court confirms pre-arrest bail for young model</h3>
+                    <span class="press-quote">"An additional sessions judge confirmed pre-arrest bail for Zulfiqar Mannan in a case regarding an alleged 'obscene photoshoot'."</span>
+                    <span class="press-meta">DAWN News | Aug 2022</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 2021: Yale Daily News - Bail -->
-            <a href="https://yaledailynews.com/articles/pakistani-courts-confirm-bail-for-yale-alum-after-lgbtq-inspired-photoshoot" target="_blank" class="press-item">
+            <!-- 2021: YDN Bail -->
+            <a href="https://yaledailynews.com/blog/2021/10/05/pakistani-courts-confirm-bail-for-yale-alum-after-lgbtq-inspired-photoshoot/" target="_blank" class="press-item">
                 <div class="press-thumb"><img src="https://www.google.com/s2/favicons?domain=yaledailynews.com&sz=128"></div>
                 <div class="press-content">
                     <h3>Courts confirm bail for Yale alum after photoshoot</h3>
-                    <span class="press-quote">"The court’s decision marks a significant moment in the defense of artistic freedom and gender expression in Pakistan."</span>
+                    <span class="press-quote">"LHC confirms pre-arrest bail for Zara Suhail Mannan (f.k.a Zulfiqar Mannan) in a case concerning creative expression."</span>
                     <span class="press-meta">Yale Daily News | Oct 2021</span>
                 </div>
             </a>
@@ -150,13 +94,13 @@
                 <div class="press-thumb"><img src="https://www.google.com/s2/favicons?domain=facebook.com&sz=128"></div>
                 <div class="press-content">
                     <h3>LHC grants pre-arrest bail to Zulfiqar Mannan</h3>
-                    <span class="press-quote">"On 2 October, the Lahore High Court granted bail in a case highlighting the state's targeting of human rights defenders."</span>
+                    <span class="press-quote">"Front Line Defenders welcomes the court's decision to grant bail in a case highlighting the state's targeting of human rights defenders."</span>
                     <span class="press-meta">Front Line Defenders | Oct 2021</span>
                 </div>
             </a>
 
-            <!-- 2021: Friday Times - Subversive Power -->
-            <a href="https://www.thefridaytimes.com/29-Aug-2021/the-subversive-power-of-art-and-the-state-s-insecurity" target="_blank" class="press-item">
+            <!-- 2021: Friday Times - Power -->
+            <a href="https://www.thefridaytimes.com/2021/08/29/the-subversive-power-of-art-and-the-states-insecurity/" target="_blank" class="press-item">
                 <div class="press-thumb"><img src="https://www.google.com/s2/favicons?domain=thefridaytimes.com&sz=128"></div>
                 <div class="press-content">
                     <h3>The subversive power of art and the state’s insecurity</h3>
@@ -165,8 +109,8 @@
                 </div>
             </a>
 
-            <!-- 2021: Friday Times - Arrest Solution -->
-            <a href="https://www.thefridaytimes.com/28-Aug-2021/young-model-s-arrest-over-obscene-photoshoot-is-not-a-solution-to-our-social-issues" target="_blank" class="press-item">
+            <!-- 2021: Friday Times - Solution -->
+            <a href="https://www.thefridaytimes.com/2021/08/28/young-models-arrest-over-obscene-photoshoot-is-not-a-solution-to-our-social-issues/" target="_blank" class="press-item">
                 <div class="press-thumb"><img src="https://www.google.com/s2/favicons?domain=thefridaytimes.com&sz=128"></div>
                 <div class="press-content">
                     <h3>Arrest over photoshoot is not a solution to social issues</h3>
@@ -175,12 +119,12 @@
                 </div>
             </a>
 
-            <!-- 2021: Yale Daily News - Faculty -->
-            <a href="https://yaledailynews.com/articles/faculty-discuss-value-of-student-protests" target="_blank" class="press-item">
+            <!-- 2021: YDN Faculty -->
+            <a href="https://yaledailynews.com/blog/2021/09/24/faculty-discuss-value-of-student-protests/" target="_blank" class="press-item">
                 <div class="press-thumb"><img src="https://www.google.com/s2/favicons?domain=yaledailynews.com&sz=128"></div>
                 <div class="press-content">
                     <h3>Faculty discuss value of student protests</h3>
-                    <span class="press-quote">"The dialogue examines the role of Yale students in challenging political injustices both on campus and internationally."</span>
+                    <span class="press-quote">"Faculty members examine the pedagogical and political value of student movements in light of recent campus events."</span>
                     <span class="press-meta">Yale Daily News | Sep 2021</span>
                 </div>
             </a>
@@ -190,13 +134,13 @@
                 <div class="press-thumb"><img src="https://www.google.com/s2/favicons?domain=thepolitic.org&sz=128"></div>
                 <div class="press-content">
                     <h3>Protest in Paradise</h3>
-                    <span class="press-quote">"Paradise Sought challenges the colonial archive and reimagines a South Asian future through digital cartography."</span>
+                    <span class="press-quote">"An examination of the Paradise Sought archive and its challenge to the colonial South Asian historical record."</span>
                     <span class="press-meta">The Politic | Feb 2020</span>
                 </div>
             </a>
 
-            <!-- 2020: Yale Daily News - Gittler -->
-            <a href="https://yaledailynews.com/articles/gittler-paradise-sought-not-found" target="_blank" class="press-item">
+            <!-- 2020: YDN Paradise -->
+            <a href="https://yaledailynews.com/blog/2020/01/24/gittler-paradise-sought-not-found/" target="_blank" class="press-item">
                 <div class="press-thumb"><img src="https://www.google.com/s2/favicons?domain=yaledailynews.com&sz=128"></div>
                 <div class="press-content">
                     <h3>Gittler: Paradise Sought, Not Found</h3>
@@ -205,8 +149,8 @@
                 </div>
             </a>
 
-            <!-- 2019: Yale Daily News - Seminar -->
-            <a href="https://yaledailynews.com/articles/students-protest-professors-seminar" target="_blank" class="press-item">
+            <!-- 2019: YDN Seminar -->
+            <a href="https://yaledailynews.com/blog/2019/04/05/students-protest-professors-seminar/" target="_blank" class="press-item">
                 <div class="press-thumb"><img src="https://www.google.com/s2/favicons?domain=yaledailynews.com&sz=128"></div>
                 <div class="press-content">
                     <h3>Students protest professor’s seminar</h3>
@@ -217,6 +161,5 @@
 
         </div>
     </div>
-
 </body>
 </html>
